@@ -53,6 +53,8 @@ parser.add_argument("--min-sz-bns",                      type=float, default=Non
 parser.add_argument("--max-sz-bns",                      type=float, default=None,  help="Maximum spin-z value for bns population")
 parser.add_argument("--min-sz-bbh",                      type=float, default=None,  help="Minimum spin-z value for bbh population")
 parser.add_argument("--max-sz-bbh",                      type=float, default=None,  help="Maximum spin-z value for bbh population")
+parser.add_argument("--min-e",                           type=float, default=None,  help="Minimum eccentricity value")
+parser.add_argument("--max-e",                           type=float, default=None,  help="Maximum eccentricity value")
 parser.add_argument("--low-frequency-generating-injections", type=int, default=None, help="Minimum frequency to inject the signal")
 parser.add_argument("--glitch-threshold",                type=float, default=None,  help="Threshold for polluting data")
 parser.add_argument("--path-saving-data",                type=str,   default=None,  help="Path to save the data")
@@ -92,6 +94,8 @@ if args.config:
     if args.max_sz_bns                      is None: args.max_sz_bns                      = get_float("max_sz_bns")
     if args.min_sz_bbh                      is None: args.min_sz_bbh                      = get_float("min_sz_bbh")
     if args.max_sz_bbh                      is None: args.max_sz_bbh                      = get_float("max_sz_bbh")
+    if args.min_e                           is None: args.min_e                           = get_gloat("min_e")
+    if args.max_e                           is None: args.max_e                           = get_gloat("max_e")
     if args.low_frequency_generating_injections is None: args.low_frequency_generating_injections = get_int("low_frequency_generating_injections")
     if args.glitch_threshold                is None: args.glitch_threshold                = get_float("glitch_threshold")
     if args.path_saving_data                is None: args.path_saving_data                = get_str  ("path_saving_data")
@@ -134,17 +138,15 @@ type_inj = args.injection_type
 # Read the argument to generate noise or injection 
 if(analysis == 'injection'):
     path_folders = args.path_saving_data
-    seed = args.seed
 elif(analysis == 'noise'):
     path_folders = args.path_saving_data
-    seed = args.seed + 426174
 
 os.makedirs(path_folders, exist_ok=True)
 
 
 num_injections = args.number_injections
 for i in tqdm(range(num_injections)):
-    seed = args.seed + 1
+    seed = args.seed + i
     job_id_save = (num_injections * job_id) + i
     if(analysis == 'injection'):
         # -------> Generate the injections parameters
@@ -157,6 +159,7 @@ for i in tqdm(range(num_injections)):
                 mc = chirp_mass(m1, m2)
                 spin1z = random.uniform(args.min_sz_bns, args.max_sz_bns)
                 spin2z = random.uniform(args.min_sz_bns, args.max_sz_bns)
+                e = np.random.uniform(args.min_e, args.max_e)
                 d = generate_x2_distribution(x_min_bns, x_max_bns)
                 distance = chirp_distance(mc, d)
             else:
@@ -167,6 +170,7 @@ for i in tqdm(range(num_injections)):
                 mc = chirp_mass(m1, m2)
                 spin1z = random.uniform(args.min_sz_bbh, args.max_sz_bbh)
                 spin2z = random.uniform(args.min_sz_bbh, args.max_sz_bbh)
+                e = np.random.uniform(args.min_e, args.max_e)
                 d = generate_x2_distribution(x_min_bbh, x_max_bbh)
                 distance = chirp_distance(mc, d)
         elif(type_inj == 'bns'):
@@ -175,6 +179,7 @@ for i in tqdm(range(num_injections)):
             mc = chirp_mass(m1, m2)
             spin1z = random.uniform(args.min_sz_bns, args.max_sz_bns)
             spin2z = random.uniform(args.min_sz_bns, args.max_sz_bns)
+            e = np.random.uniform(args.min_e, args.max_e)
             d = generate_x2_distribution(x_min_bns, x_max_bns)
             distance = d
         elif(type_inj == 'bbh'):
@@ -185,16 +190,18 @@ for i in tqdm(range(num_injections)):
             mc = chirp_mass(m1, m2)
             spin1z = random.uniform(args.min_sz_bbh, args.max_sz_bbh)
             spin2z = random.uniform(args.min_sz_bbh, args.max_sz_bbh)
+            e = np.random.uniform(args.min_e, args.max_e)
             d = generate_x2_distribution(x_min_bbh, x_max_bbh)
             distance = chirp_distance(mc, d)
         
         # ------> Generate the injections
-        hp, hc = get_td_waveform(approximant="SEOBNRv4_opt",
+        hp, hc = get_td_waveform(approximant="SEOBNRv5E_td",
                                  mass1=m1,
                                  mass2=m2,
                                  spin1z = spin1z,
                                  spin2z = spin2z,
                                  delta_t=1 / 16384,
+                                 eccentricity = e,
                                  f_lower=args.low_frequency_generating_injections,
                                  distance = distance)
         # Let the signal begin in  the 61.3 -61.5  s window

@@ -231,7 +231,7 @@ for i in tqdm(range(num_injections)):
     # Calculate the optimal snr
     psd_est = interpolate(welch(noise), 1.0 / injection_ts.duration)
     optimal_snr = pycbc.filter.sigma(injection_ts, psd=psd_est,
-                                         low_frequency_cutoff=40)
+                                         low_frequency_cutoff=args.low_frequency_generating_injections)
 
     # Generate a random number, that is the activator
     # here we impose that only 30% of datastrain will be glitched-affected

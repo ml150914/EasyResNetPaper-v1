@@ -18,7 +18,7 @@ from pycbc.filter import highpass_fir, matched_filter, sigma
 import sys
 from sineGauss import sineGaussian
 from plot_TS import plot
-from distributions_Mc_distance import generate_x2_distribution, bbh_distribution_law, chirp_mass, chirp_distance
+from distributions_Mc_distance import generate_x2_distribution, bbh_distribution_law, chirp_mass, chirp_distance, extreme_spin_distribution_single_values_bbh, extreme_spin_distribution_single_values_bns
 import argparse
 import configparser
 import time
@@ -155,8 +155,7 @@ for i in tqdm(range(num_injections)):
                 m1 = random.uniform(args.min_m_bns,args.max_m_bns)
                 m2 = random.uniform(args.min_m_bns,args.max_m_bns)
                 mc = chirp_mass(m1, m2)
-                spin1z = random.uniform(args.min_sz_bns, args.max_sz_bns)
-                spin2z = random.uniform(args.min_sz_bns, args.max_sz_bns)
+                spin1z, spin2z = extreme_spin_distribution_single_values_bns(samples=1)
                 d = generate_x2_distribution(x_min_bns, x_max_bns)
                 distance = chirp_distance(mc, d)
             else:
@@ -165,8 +164,7 @@ for i in tqdm(range(num_injections)):
                 q = q**(1/(1.5))
                 m2 = q * m1
                 mc = chirp_mass(m1, m2)
-                spin1z = random.uniform(args.min_sz_bbh, args.max_sz_bbh)
-                spin2z = random.uniform(args.min_sz_bbh, args.max_sz_bbh)
+                spin1z, spin2z = extreme_spin_distribution_single_values_bbh(samples=1)
                 d = generate_x2_distribution(x_min_bbh, x_max_bbh)
                 distance = chirp_distance(mc, d)
         elif(type_inj == 'bns'):

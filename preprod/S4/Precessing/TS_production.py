@@ -22,7 +22,8 @@ from distributions_Mc_distance import generate_x2_distribution, bbh_distribution
 import argparse
 import configparser
 import time
-from tqdm import tqdm 
+from tqdm import tqdm
+import json
 """
 ### This macro will produce a bns signal injected  at 61s of 80s long gaussian noise.
 ### The production parameters such as masses and distance are randomized.
@@ -49,6 +50,14 @@ parser.add_argument("--min-m-bns",                       type=float, default=Non
 parser.add_argument("--max-m-bns",                       type=float, default=None,  help="Maximum mass value for bns population")
 parser.add_argument("--min-m-bbh",                       type=float, default=None,  help="Minimum mass value for bbh population")
 parser.add_argument("--max-m-bbh",                       type=float, default=None,  help="Maximum mass value for bbh population")
+parser.add_argument("--min-sx-bns",                      type=float, default=None,  help="Minimum spin-x value for bns population")
+parser.add_argument("--max-sx-bns",                      type=float, default=None,  help="Maximum spin-x value for bns population")
+parser.add_argument("--min-sx-bbh",                      type=float, default=None,  help="Minimum spin-x value for bbh population")
+parser.add_argument("--max-sx-bbh",                      type=float, default=None,  help="Maximum spin-x value for bbh population")
+parser.add_argument("--min-sy-bns",                      type=float, default=None,  help="Minimum spin-y value for bns population")
+parser.add_argument("--max-sy-bns",                      type=float, default=None,  help="Maximum spin-y value for bns population")
+parser.add_argument("--min-sy-bbh",                      type=float, default=None,  help="Minimum spin-y value for bbh population")
+parser.add_argument("--max-sy-bbh",                      type=float, default=None,  help="Maximum spin-y value for bbh population")
 parser.add_argument("--min-sz-bns",                      type=float, default=None,  help="Minimum spin-z value for bns population")
 parser.add_argument("--max-sz-bns",                      type=float, default=None,  help="Maximum spin-z value for bns population")
 parser.add_argument("--min-sz-bbh",                      type=float, default=None,  help="Minimum spin-z value for bbh population")
@@ -88,8 +97,16 @@ if args.config:
     if args.max_m_bns                       is None: args.max_m_bns                       = get_float("max_m_bns")
     if args.min_m_bbh                       is None: args.min_m_bbh                       = get_float("min_m_bbh")
     if args.max_m_bbh                       is None: args.max_m_bbh                       = get_float("max_m_bbh")
+    if args.min_sx_bns                      is None: args.min_sx_bns                      = get_float("min_sx_bns")
+    if args.max_sx_bns                      is None: args.max_sx_bns                      = get_float("max_sx_bns")
+    if args.min_sy_bns                      is None: args.min_sy_bns                      = get_float("min_sy_bns")
+    if args.max_sy_bns                      is None: args.max_sy_bns                      = get_float("max_sy_bns")
     if args.min_sz_bns                      is None: args.min_sz_bns                      = get_float("min_sz_bns")
     if args.max_sz_bns                      is None: args.max_sz_bns                      = get_float("max_sz_bns")
+    if args.min_sx_bbh                      is None: args.min_sx_bbh                      = get_float("min_sx_bbh")
+    if args.max_sx_bbh                      is None: args.max_sx_bbh                      = get_float("max_sx_bbh")
+    if args.min_sy_bbh                      is None: args.min_sy_bbh                      = get_float("min_sy_bbh")
+    if args.max_sy_bbh                      is None: args.max_sy_bbh                      = get_float("max_sy_bbh")
     if args.min_sz_bbh                      is None: args.min_sz_bbh                      = get_float("min_sz_bbh")
     if args.max_sz_bbh                      is None: args.max_sz_bbh                      = get_float("max_sz_bbh")
     if args.low_frequency_generating_injections is None: args.low_frequency_generating_injections = get_int("low_frequency_generating_injections")
@@ -134,74 +151,84 @@ type_inj = args.injection_type
 # Read the argument to generate noise or injection 
 if(analysis == 'injection'):
     path_folders = args.path_saving_data
-    seed = args.seed
 elif(analysis == 'noise'):
     path_folders = args.path_saving_data
-    seed = args.seed + 426174
 
 os.makedirs(path_folders, exist_ok=True)
 
 
 num_injections = args.number_injections
 for i in tqdm(range(num_injections)):
-    seed = args.seed + 1
+    seed = args.seed + job_id + i
     job_id_save = (num_injections * job_id) + i
-    if(analysis == 'injection'):
-        # -------> Generate the injections parameters
+    # -------> Generate the injections parameters
+    if analysis == 'injection': 
         populator = random.uniform(0, 1)
-        populator_threshold = args.population_fraction
+        populator_threshold = 0.3
         if(type_inj == 'mixed'):
-            if (populator <= populator_threshold):
-                m1 = random.uniform(args.min_m_bns,args.max_m_bns)
-                m2 = random.uniform(args.min_m_bns,args.max_m_bns)
+            if populator < populator_threshold:
+                m1 = random.uniform(1.4,3)
+                m2 = random.uniform(1.4,3)
                 mc = chirp_mass(m1, m2)
+                spin1x = random.uniform(args.min_sx_bns, args.max_sx_bns)
+                spin2x = random.uniform(args.min_sx_bns, args.max_sx_bns)
+                spin1y = random.uniform(args.min_sy_bns, args.max_sy_bns)
+                spin2y = random.uniform(args.min_sy_bns, args.max_sy_bns)
                 spin1z = random.uniform(args.min_sz_bns, args.max_sz_bns)
                 spin2z = random.uniform(args.min_sz_bns, args.max_sz_bns)
+                incl = 1.54
                 d = generate_x2_distribution(x_min_bns, x_max_bns)
                 distance = chirp_distance(mc, d)
-            else:
-                m1 = float(bbh_distribution_law(m_min=args.min_m_bbh, m_max=args.max_m_bbh, alpha=3.5))
+            elif populator <= 0.6:
+                m1 = bbh_distribution_law(m_min=3, m_max=200, alpha=3.5)
                 q = np.random.uniform(0.15, 1)
                 q = q**(1/(1.5))
                 m2 = q * m1
                 mc = chirp_mass(m1, m2)
-                spin1z = random.uniform(args.min_sz_bbh, args.max_sz_bbh)
-                spin2z = random.uniform(args.min_sz_bbh, args.max_sz_bbh)
-                d = generate_x2_distribution(x_min_bbh, x_max_bbh)
+                spin1x = random.uniform(args.min_sx_bns, args.max_sx_bns)
+                spin2x = random.uniform(args.min_sx_bns, args.max_sx_bns)
+                spin1y = random.uniform(args.min_sy_bns, args.max_sy_bns)
+                spin2y = random.uniform(args.min_sy_bns, args.max_sy_bns)
+                spin1z = random.uniform(args.min_sz_bns, args.max_sz_bns)
+                spin2z = random.uniform(args.min_sz_bns, args.max_sz_bns)
+                incl = 1.54
+                d = generate_x2_distribution(x_min_bns, x_max_bns)
                 distance = chirp_distance(mc, d)
-        elif(type_inj == 'bns'):
-            m1 = random.uniform(args.min_m_bns,args.max_m_bns)
-            m2 = random.uniform(args.min_m_bns, args.max_m_bns)
-            mc = chirp_mass(m1, m2)
-            spin1z = random.uniform(args.min_sz_bns, args.max_sz_bns)
-            spin2z = random.uniform(args.min_sz_bns, args.max_sz_bns)
-            d = generate_x2_distribution(x_min_bns, x_max_bns)
-            distance = d
-        elif(type_inj == 'bbh'):
-            q = np.random.uniform(0.15, 1)
-            q = q**(1/(1.5))
-            m1 = float(bbh_distribution_law(m_min=args.min_m_bbh, m_max=args.max_m_bbh, alpha=3.5))
-            m2 = q * m1
-            mc = chirp_mass(m1, m2)
-            spin1z = random.uniform(args.min_sz_bbh, args.max_sz_bbh)
-            spin2z = random.uniform(args.min_sz_bbh, args.max_sz_bbh)
-            d = generate_x2_distribution(x_min_bbh, x_max_bbh)
-            distance = chirp_distance(mc, d)
-        
+            else:
+                m1 = random.uniform(1.4,3)
+                m2 = random.uniform(10,25)
+                mc = chirp_mass(m1, m2)
+                spin1x = random.uniform(args.min_sx_bns, args.max_sx_bns)
+                spin2x = random.uniform(args.min_sx_bns, args.max_sx_bns)
+                spin1y = random.uniform(args.min_sy_bns, args.max_sy_bns)
+                spin2y = random.uniform(args.min_sy_bns, args.max_sy_bns)
+                spin1z = random.uniform(args.min_sz_bns, args.max_sz_bns)
+                spin2z = random.uniform(args.min_sz_bns, args.max_sz_bns)
+                incl = 1.54
+                d = generate_x2_distribution(x_min_bns, x_max_bns)
+                distance = chirp_distance(mc, d)
+            
         # ------> Generate the injections
-        hp, hc = get_td_waveform(approximant="SEOBNRv4_opt",
+        hp, hc = get_td_waveform(approximant="SEOBNRv4PHM",
                                  mass1=m1,
                                  mass2=m2,
+                                 spin1x = spin1x,
+                                 spin2x = spin2x,
+                                 spin1y = spin1y,
+                                 spin2y = spin2y,
                                  spin1z = spin1z,
                                  spin2z = spin2z,
-                                 delta_t=1 / 16384,
+                                 inclination = 1.57,
+                                 mode_array = [(2,2)],
+                                 delta_t=1 / 32768,
                                  f_lower=args.low_frequency_generating_injections,
                                  distance = distance)
         # Let the signal begin in  the 61.3 -61.5  s window
         hp.start_time = 61 - hp.duration + random.uniform(0.3,0.5)
         merge_time = hp.end_time
         hp = resample_to_delta_t(hp, 1.0/2048) # resample the signal to avoid over-computation 
-
+        
+        
     # ------> Generate the noise
     tsamples = int(80 * 2048) # generate 80 seconds of noise
     noise = pycbc.noise.noise_from_psd(tsamples, delta_t, psd, seed = seed)
@@ -229,9 +256,10 @@ for i in tqdm(range(num_injections)):
 
     # ------> Calculate the optimal snr
     # Calculate the optimal snr
-    psd_est = interpolate(welch(noise), 1.0 / injection_ts.duration)
-    optimal_snr = pycbc.filter.sigma(injection_ts, psd=psd_est,
-                                         low_frequency_cutoff=args.low_frequency_generating_injections)
+    if analysis == 'injection': 
+        psd_est = interpolate(welch(noise), 1.0 / injection_ts.duration)
+        optimal_snr = pycbc.filter.sigma(injection_ts, psd=psd_est,
+                                        low_frequency_cutoff=args.low_frequency_generating_injections)
 
     # Generate a random number, that is the activator
     # here we impose that only 30% of datastrain will be glitched-affected
@@ -250,7 +278,7 @@ for i in tqdm(range(num_injections)):
                              "m2": m2,
                              "s1z": spin1z,
                              "s2z": spin2z,
-                             "merge_time": merge_time,
+                             "merge_time": float(merge_time),
                              "optimal_snr": optimal_snr,
                              "seed": seed,
                              "f_0" : f_0,
@@ -286,6 +314,7 @@ for i in tqdm(range(num_injections)):
                                    "detector": 'L1'}
             for key, value in sineGaussian_params.items():
                 f.write(f"{key}: {value}\n")
+            
 
 end = time.perf_counter()
 print(f"Duration: {end - start:.3f} seconds")

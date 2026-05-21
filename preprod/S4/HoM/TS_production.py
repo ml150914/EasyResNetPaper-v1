@@ -154,9 +154,9 @@ for i in tqdm(range(num_injections)):
             if (populator <= populator_threshold):
                 m1 = random.uniform(args.min_m_bns,args.max_m_bns)
                 m2 = random.uniform(args.min_m_bns,args.max_m_bns)
+                spin1z = 0
+                spin2z = 0
                 mc = chirp_mass(m1, m2)
-                spin1z = random.uniform(args.min_sz_bns, args.max_sz_bns)
-                spin2z = random.uniform(args.min_sz_bns, args.max_sz_bns)
                 d = generate_x2_distribution(x_min_bns, x_max_bns)
                 distance = chirp_distance(mc, d)
             else:
@@ -165,36 +165,19 @@ for i in tqdm(range(num_injections)):
                 q = q**(1/(1.5))
                 m2 = q * m1
                 mc = chirp_mass(m1, m2)
-                spin1z = random.uniform(args.min_sz_bbh, args.max_sz_bbh)
-                spin2z = random.uniform(args.min_sz_bbh, args.max_sz_bbh)
+                spin1z = 0
+                spin2z = 0
                 d = generate_x2_distribution(x_min_bbh, x_max_bbh)
                 distance = chirp_distance(mc, d)
-        elif(type_inj == 'bns'):
-            m1 = random.uniform(args.min_m_bns,args.max_m_bns)
-            m2 = random.uniform(args.min_m_bns, args.max_m_bns)
-            mc = chirp_mass(m1, m2)
-            spin1z = random.uniform(args.min_sz_bns, args.max_sz_bns)
-            spin2z = random.uniform(args.min_sz_bns, args.max_sz_bns)
-            d = generate_x2_distribution(x_min_bns, x_max_bns)
-            distance = d
-        elif(type_inj == 'bbh'):
-            q = np.random.uniform(0.15, 1)
-            q = q**(1/(1.5))
-            m1 = float(bbh_distribution_law(m_min=args.min_m_bbh, m_max=args.max_m_bbh, alpha=3.5))
-            m2 = q * m1
-            mc = chirp_mass(m1, m2)
-            spin1z = random.uniform(args.min_sz_bbh, args.max_sz_bbh)
-            spin2z = random.uniform(args.min_sz_bbh, args.max_sz_bbh)
-            d = generate_x2_distribution(x_min_bbh, x_max_bbh)
-            distance = chirp_distance(mc, d)
-        
         # ------> Generate the injections
-        hp, hc = get_td_waveform(approximant="SEOBNRv4_opt",
+        hp, hc = get_td_waveform(approximant="SEOBNRv5HM",
                                  mass1=m1,
                                  mass2=m2,
-                                 spin1z = spin1z,
-                                 spin2z = spin2z,
+                                 spin1z = 0,
+                                 spin2z = 0,
                                  delta_t=1 / 16384,
+                                 lmax_nyquist=2,
+                                 inclination = 1.57,
                                  f_lower=args.low_frequency_generating_injections,
                                  distance = distance)
         # Let the signal begin in  the 61.3 -61.5  s window
@@ -255,6 +238,7 @@ for i in tqdm(range(num_injections)):
                              "seed": seed,
                              "f_0" : f_0,
                              "q_factor" : q_factor,
+                             "HM" : "All",
                              "amplitude" : amplitude,
                              "phase" : phase,
                              "time_jitter" : time_jitter,

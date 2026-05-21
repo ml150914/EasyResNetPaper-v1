@@ -3,9 +3,10 @@ import pandas as pd
 import glob
 import matplotlib.pyplot as plt
 import numpy as np
+import json
 
 # Define the folder path
-folder_path = "/home/lorenzo-mobilia/EasyResNetPaper-v1/preprod/S3/injections/"
+folder_path = "/home/lorenzo-mobilia/EasyResNetPaper-v1/preprod/S4/Superimposed/injections/"
 
 # Get all files matching the pattern
 file_pattern = os.path.join(folder_path, "injection_param_*.txt")
@@ -19,27 +20,16 @@ for file in files:
     with open(file, "r") as f:
         data = {}
         for line in f:
-            key, value = line.strip().split(": ", 1)  # Split only on the first occurrence
-            try:
-                # Try converting to a float or int
-                if "." in value or "e" in value:
-                    data[key] = float(value)
-                else:
-                    data[key] = int(value)
-            except ValueError:
-                if "[" in value and "]" in value:  # Handle list values
-                    value = value.strip("[]")
-                    data[key] = [float(x) for x in value.split()]
-                else:
-                    data[key] = value  # Keep as string if it can't be converted
-        data_list.append(data)
+            line = line.strip()
+            if line:
+                data_list.append(json.loads(line))
 
 # Convert the list of dictionaries into a DataFrame
 df = pd.DataFrame(data_list)
 df['m_tot'] = df['m1'] + df['m2']
 df['spin_eff'] = ( df['m1'] * df['s1z'] + df['m2'] * df['s2z'] ) / ( df['m_tot'])
 
-save_path = '/home/lorenzo-mobilia/public_html/EasyResNetPaper-v1/S3/'
+save_path = '/home/lorenzo-mobilia/public_html/EasyResNetPaper-v1/S4/Superimposed/'
 
 plt.scatter(df['distance'], df['optimal_snr'], s = 10)
 plt.ylabel('opt_snr')
