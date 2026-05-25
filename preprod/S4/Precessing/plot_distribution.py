@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Define the folder path
-folder_path = "/home/lorenzo-mobilia/EasyResNetPaper-v1/preprod/S3/injections/"
+folder_path = "/home/lorenzo-mobilia/EasyResNetPaper-v1/preprod/S4/Precessing/injections/"
 
 # Get all files matching the pattern
 file_pattern = os.path.join(folder_path, "injection_param_*.txt")
@@ -39,7 +39,7 @@ df = pd.DataFrame(data_list)
 df['m_tot'] = df['m1'] + df['m2']
 df['spin_eff'] = ( df['m1'] * df['s1z'] + df['m2'] * df['s2z'] ) / ( df['m_tot'])
 
-save_path = '/home/lorenzo-mobilia/public_html/EasyResNetPaper-v1/S3/'
+save_path = '/home/lorenzo-mobilia/public_html/EasyResNetPaper-v1/S4/Precessing/'
 
 plt.scatter(df['distance'], df['optimal_snr'], s = 10)
 plt.ylabel('opt_snr')

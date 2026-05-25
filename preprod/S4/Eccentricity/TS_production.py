@@ -146,7 +146,7 @@ os.makedirs(path_folders, exist_ok=True)
 
 num_injections = args.number_injections
 for i in tqdm(range(num_injections)):
-    seed = args.seed + i
+    seed = args.seed + job_id + i
     job_id_save = (num_injections * job_id) + i
     if(analysis == 'injection'):
         # -------> Generate the injections parameters
