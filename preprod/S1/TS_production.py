@@ -234,7 +234,7 @@ for i in tqdm(range(num_injections)):
                                          low_frequency_cutoff=args.low_frequency_generating_injections)
 
     # Generate a random number, that is the activator
-    # here we impose that only 30% of datastrain will be glitched-affected
+    # here we impose no glitch
     activator = random.uniform(0, 1)
     threshold = args.glitch_threshold
     # -------> inject here the glitch If above threshold)
