@@ -226,8 +226,12 @@ for gwf in range(num_data):
     if(analysis == 'injection'):
         with open(path_folder + f'/injection_param_{job_id_read_save}.txt', 'r') as f:
             for line in f:
-                key, value = line.strip().split(':', 1)  # Split at the first column  
-                metadata[key.strip()] = float(value.strip()) if '.' in value else value.strip()
+                key, value = line.strip().split(':', 1)  # Split at the first column
+                value = value.strip()
+                if '.' in value:
+                    metadata[key.strip()] = float(value.strip('[]'))
+                else:
+                    metadata[key.strip()] = value
             metadata['max_snr'] = max_snr
             metadata['max_rwsnr'] = max_rwsnr
             metadata['chisq'] = chisq_at_max_rwsnr

@@ -11,11 +11,19 @@ def list_images(folder):
 
     return sorted(files)
 
-def split_indices(n, r_train, r_val, seed):
-    idx = list(range(n))
+def split_indices(n, r_train, r_val, seed, assert_sim=None):
+    if assert_sim:
+        idx = list(range(assert_sim))
+    else:
+        idx = list(range(n))
     random.Random(seed).shuffle(idx)
-    n_train = int(n * r_train)
-    n_val = int(n * r_val)
+    if assert_sim:                      
+        n_train = int(assert_sim * r_train) 
+        n_val = int(assert_sim * r_val)
+    else:
+        n_train = int(n * r_train)
+        n_val = int(n * r_val)
+    n_test = n_train - n_val
     return idx[:n_train], idx[n_train:n_train + n_val], idx[n_train + n_val:]
 
 def place(src, dst, mode):
@@ -29,14 +37,16 @@ def place(src, dst, mode):
 
 def main():
     ap = argparse.ArgumentParser(description="Split inj/noise into train/val/test")
-    ap.add_argument("--inj-dir", default="injections_16_bins")
-    ap.add_argument("--noise-dir", default="noise_16_bins")
-    ap.add_argument("--out-dir", default="dataset")
+    ap.add_argument("--inj-dir", default="injections_16_bins_correct_seed")
+    ap.add_argument("--noise-dir", default="/home/lorenzo-mobilia/EasyResNetPaper-v1/prod/S2/noise_16_bins_correct_seed")
+    ap.add_argument("--out-dir", default="dataset_correct_seed_70k")
+    ap.add_argument("--test-per-class", type=int, default=70_000,
+                    help="if set, it puts exactly N simulation per class;")
     ap.add_argument("--train", type=float, default=0.70)
     ap.add_argument("--val", type=float, default=0.15)
     ap.add_argument("--test", type=float, default=0.15)
     ap.add_argument("--seed", type=int, default=156)
-    ap.add_argument("--mode", choices=["copy", "move", "symlink"], default="copy")
+    ap.add_argument("--mode", choices=["copy", "move", "symlink"], default="symlink")
     args = ap.parse_args()
 
 
@@ -52,8 +62,11 @@ def main():
 
     for cls, folder in classes.items():
         files = list_images(folder)
-        tr, va, te = split_indices(len(files), args.train, args.val, args.seed)
-        summary[cls] = (len(ts, len(va), len(te))
+        tr, va, te = split_indices(len(files), args.train, args.val, args.seed, args.test_per_class)
+        if args.test_per_class and len(files) < args.test_per_class:
+            print(f"  WARNING: '{cls}' has only {len(files)} images "
+                  f"(< {args.test_per_class}); train/val will be empty.")
+        summary[cls] = (len(tr), len(va), len(te))
 
         for split, ids in (("train", tr), ("val", va)):
             for i in ids:

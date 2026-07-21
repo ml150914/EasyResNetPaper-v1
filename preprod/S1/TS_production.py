@@ -134,18 +134,17 @@ type_inj = args.injection_type
 # Read the argument to generate noise or injection 
 if(analysis == 'injection'):
     path_folders = args.path_saving_data
-    seed = args.seed
 elif(analysis == 'noise'):
     path_folders = args.path_saving_data
-    seed = args.seed + 426174
 
 os.makedirs(path_folders, exist_ok=True)
 
 
 num_injections = args.number_injections
 for i in tqdm(range(num_injections)):
-    seed = args.seed + job_id + i
+    #seed = args.seed + job_id + i 
     job_id_save = (num_injections * job_id) + i
+    seed = job_id_save + args.seed
     if(analysis == 'injection'):
         # -------> Generate the injections parameters
         populator = random.uniform(0, 1)

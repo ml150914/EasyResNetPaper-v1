@@ -1,5 +1,5 @@
 #!/home/lorenzo-mobilia/.conda/envs/myenv3/bin/python  
-
+import json 
 import numpy as np
 import pylab as pl
 from tqdm import tqdm
@@ -224,14 +224,23 @@ for gwf in range(num_data):
     chisq_at_max_rwsnr = g_chisq
     # Save the metadata information related to this stretch of data
     if(analysis == 'injection'):
+        records = []
         with open(path_folder + f'/injection_param_{job_id_read_save}.txt', 'r') as f:
             for line in f:
-                key, value = line.strip().split(':', 1)  # Split at the first column  
-                metadata[key.strip()] = float(value.strip()) if '.' in value else value.strip()
-            metadata['max_snr'] = max_snr
-            metadata['max_rwsnr'] = max_rwsnr
-            metadata['chisq'] = chisq_at_max_rwsnr
-            print(metadata)
+                line = line.strip()
+                if not line:
+                    continue
+                rec = json.loads(line)
+                records.append(rec)
+                best_rec = max(records, key=lambda r: r.get('optimal_snr', -np.inf))
+                metadata.update(best_rec)
+                #key, value = line.strip().split(':', 1)  # Split at the first column                                                  
+                #metadata[key.strip()] = float(value.strip()) if '.' in value else value.strip()                                       
+                metadata['max_snr'] = max_snr
+                metadata['max_rwsnr'] = max_rwsnr
+                metadata['chisq'] = chisq_at_max_rwsnr
+            
+    
     else:
         with open(path_folder + f'/sineGauss_param_{job_id_read_save}.txt', 'r') as f:
             for line in f:

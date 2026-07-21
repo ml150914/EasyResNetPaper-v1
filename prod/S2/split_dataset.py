@@ -37,9 +37,9 @@ def place(src, dst, mode):
 
 def main():
     ap = argparse.ArgumentParser(description="Split inj/noise into train/val/test")
-    ap.add_argument("--inj-dir", default="injections_16_bins_correct_seed_fainter")
+    ap.add_argument("--inj-dir", default="injections_16_bins_correct_seed")
     ap.add_argument("--noise-dir", default="noise_16_bins_correct_seed")
-    ap.add_argument("--out-dir", default="dataset_correct_seed_70k_fainter_inj")
+    ap.add_argument("--out-dir", default="dataset_correct_seed_70k")
     ap.add_argument("--test-per-class", type=int, default=70_000,
                     help="if set, it puts exactly N simulation per class;")
     ap.add_argument("--train", type=float, default=0.70)

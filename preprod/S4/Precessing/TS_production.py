@@ -159,8 +159,8 @@ os.makedirs(path_folders, exist_ok=True)
 
 num_injections = args.number_injections
 for i in tqdm(range(num_injections)):
-    seed = args.seed + job_id + i
     job_id_save = (num_injections * job_id) + i
+    seed = job_id_save + args.seed
     # -------> Generate the injections parameters
     if analysis == 'injection': 
         populator = random.uniform(0, 1)
@@ -276,6 +276,10 @@ for i in tqdm(range(num_injections)):
                              "distance": distance,
                              "m1": m1,
                              "m2": m2,
+                             "s1x": spin1x,
+                             "s2x": spin2x,
+                             "s1y": spin1y,
+                             "s2y": spin2y,
                              "s1z": spin1z,
                              "s2z": spin2z,
                              "merge_time": float(merge_time),

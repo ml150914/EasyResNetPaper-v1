@@ -141,12 +141,8 @@ os.makedirs(path_folders, exist_ok=True)
     
 num_injections = args.number_injections
 for j in tqdm(range(num_injections)):
-    if analysis == 'injection':
-        seed = args.seed + job_id + j
-    elif analysis == 'noise':
-        seed = args.seed + job_id + j + 3153
-
-    job_id_save = (args.number_injections * job_id) + j
+    job_id_save = (num_injections * job_id) + j
+    seed = job_id_save + args.seed
     
     tsamples = int(80 * 2048) # generate 80 seconds of noise
     noise = pycbc.noise.noise_from_psd(tsamples, delta_t, psd, seed = seed)
@@ -197,7 +193,8 @@ for j in tqdm(range(num_injections)):
                                  "merge_time1": float(merge_time),
                                  "seed": int(seed),
                                  "optimal_snr": float(optimal_snr),
-                                 "detector": 'L1'}
+                                 "detector": 'L1',
+                                 "tag": 'Superimposed'}
 
             with open(path_folders + f'/injection_param_{job_id_save}.txt', 'a') as f:
                 f.write(json.dumps(injections_params) + "\n")

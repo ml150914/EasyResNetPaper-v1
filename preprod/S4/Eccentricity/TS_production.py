@@ -94,8 +94,8 @@ if args.config:
     if args.max_sz_bns                      is None: args.max_sz_bns                      = get_float("max_sz_bns")
     if args.min_sz_bbh                      is None: args.min_sz_bbh                      = get_float("min_sz_bbh")
     if args.max_sz_bbh                      is None: args.max_sz_bbh                      = get_float("max_sz_bbh")
-    if args.min_e                           is None: args.min_e                           = get_gloat("min_e")
-    if args.max_e                           is None: args.max_e                           = get_gloat("max_e")
+    if args.min_e                           is None: args.min_e                           = get_float("min_e")
+    if args.max_e                           is None: args.max_e                           = get_float("max_e")
     if args.low_frequency_generating_injections is None: args.low_frequency_generating_injections = get_int("low_frequency_generating_injections")
     if args.glitch_threshold                is None: args.glitch_threshold                = get_float("glitch_threshold")
     if args.path_saving_data                is None: args.path_saving_data                = get_str  ("path_saving_data")
@@ -146,8 +146,8 @@ os.makedirs(path_folders, exist_ok=True)
 
 num_injections = args.number_injections
 for i in tqdm(range(num_injections)):
-    seed = args.seed + job_id + i
-    job_id_save = (num_injections * job_id) + i
+    job_id_save = (num_injections * job_id) + 19526 + i
+    seed = job_id_save + args.seed
     if(analysis == 'injection'):
         # -------> Generate the injections parameters
         populator = random.uniform(0, 1)
@@ -195,6 +195,8 @@ for i in tqdm(range(num_injections)):
             distance = chirp_distance(mc, d)
         
         # ------> Generate the injections
+        f_cap = 1600.0 / (m1 + m2)
+        f_lower = min(args.low_frequency_generating_injections, f_cap)
         hp, hc = get_td_waveform(approximant="SEOBNRv5E_td",
                                  mass1=m1,
                                  mass2=m2,
@@ -202,7 +204,7 @@ for i in tqdm(range(num_injections)):
                                  spin2z = spin2z,
                                  delta_t=1 / 16384,
                                  eccentricity = e,
-                                 f_lower=args.low_frequency_generating_injections,
+                                 f_lower=f_lower,
                                  distance = distance)
         # Let the signal begin in  the 61.3 -61.5  s window
         hp.start_time = 61 - hp.duration + random.uniform(0.3,0.5)

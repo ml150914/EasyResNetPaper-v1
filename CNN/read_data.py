@@ -48,12 +48,12 @@ def create_tf(input_path, img_width, img_height, batch_size):
     list_train_ds = tf.data.Dataset.list_files(input_path+'/train/*/*', shuffle=False)
     list_val_ds = tf.data.Dataset.list_files(input_path+'/val/*/*', shuffle=False)
     list_test_ds = tf.data.Dataset.list_files(input_path+'/test/*', shuffle=False)
-
+    
     # Shuffle the tfdataset
     list_train_ds = list_train_ds.shuffle(len(list_train_ds), reshuffle_each_iteration=False)
     list_val_ds = list_val_ds.shuffle(len(list_val_ds), reshuffle_each_iteration=False)
     list_test_ds = list_test_ds.shuffle(len(list_test_ds), reshuffle_each_iteration=False)
-
+    
     # Initialize the classes
     class_names = ['inj', 'noise']
 
@@ -67,12 +67,15 @@ def create_tf(input_path, img_width, img_height, batch_size):
     print('Validation ', len(list_val_ds))
     print('Test ', len(list_test_ds))
 
-    # Convert datasets to Python sets of file paths
-    train_paths = set([path.numpy().decode('utf-8') for path in list_train_ds])
-    val_paths = set([path.numpy().decode('utf-8') for path in list_val_ds])
-    test_paths = set([path.numpy().decode('utf-8') for path in list_test_ds])
+    #test_paths = set([os.path.basename(path.numpy().decode('utf-8')) for path in list_test_ds])
 
-    # Check for overlaps bia intersection
+    # Convert datasets to Python sets of file paths
+    train_paths = set([os.path.basename(path.numpy().decode('utf-8')) for path in list_train_ds])
+    val_paths = set([os.path.basename(path.numpy().decode('utf-8')) for path in list_val_ds])
+    test_paths = set([os.path.basename(path.numpy().decode('utf-8')) for path in list_test_ds])
+
+    
+    # Check for overlaps via intersection
     train_val_overlap = train_paths & val_paths
     train_test_overlap = train_paths & test_paths
     val_test_overlap = val_paths & test_paths

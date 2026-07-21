@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Define the folder path
-folder_path = "/home/lorenzo-mobilia/EasyResNetPaper-v1/preprod/S3/injections/"
+folder_path = "/home/lorenzo-mobilia/EasyResNetPaper-v1/preprod/S3/injections_16_bins_correct_seed/"
 
 # Get all files matching the pattern
 file_pattern = os.path.join(folder_path, "injection_param_*.txt")

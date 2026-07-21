@@ -11,6 +11,9 @@ folder_path = "/home/lorenzo-mobilia/EasyResNetPaper-v1/preprod/S4/Precessing/in
 file_pattern = os.path.join(folder_path, "injection_param_*.txt")
 files = glob.glob(file_pattern)
 
+#file_pattern = os.path.join(folder_path, "injection_param_561.txt")
+#files = glob.glob(file_pattern)
+
 # Initialize an empty list to store data
 data_list = []
 
@@ -19,25 +22,29 @@ for file in files:
     with open(file, "r") as f:
         data = {}
         for line in f:
+            line = line.strip()
+            if not line:
+                continue
             key, value = line.strip().split(": ", 1)  # Split only on the first occurrence
-            try:
-                # Try converting to a float or int
-                if "." in value or "e" in value:
-                    data[key] = float(value)
-                else:
+            value = value.strip()
+            if value.startswith("[") and value.endswith("]"):
+                nums = [float(x) for x in value.strip("[]").split()]
+                data[key] = nums[0] if len(nums) == 1 else nums
+            else:
+                try:
                     data[key] = int(value)
-            except ValueError:
-                if "[" in value and "]" in value:  # Handle list values
-                    value = value.strip("[]")
-                    data[key] = [float(x) for x in value.split()]
-                else:
-                    data[key] = value  # Keep as string if it can't be converted
+                except ValueError:
+                    try:
+                        data[key] = float(value)
+                    except ValueError:
+                        data[key] = value
         data_list.append(data)
 
 # Convert the list of dictionaries into a DataFrame
 df = pd.DataFrame(data_list)
+df = df.dropna(subset=['distance'])
 df['m_tot'] = df['m1'] + df['m2']
-df['spin_eff'] = ( df['m1'] * df['s1z'] + df['m2'] * df['s2z'] ) / ( df['m_tot'])
+#df['spin_eff'] = ( df['m1'] * df['s1z'] + df['m2'] * df['s2z'] ) / ( df['m_tot'])
 
 save_path = '/home/lorenzo-mobilia/public_html/EasyResNetPaper-v1/S4/Precessing/'
 
@@ -48,17 +55,41 @@ plt.xscale('log')
 plt.savefig(save_path + f'distance_opt_snr.png')
 plt.close()
 
-plt.scatter(df['m_tot'], df['spin_eff'], s = 10)
-plt.ylabel('$\chi_{eff}$')
-plt.xlabel('Mtot')
-plt.xscale('log')
-plt.savefig(save_path + f'chi_eff_mtot1.png')
+#plt.scatter(df['m_tot'], df['spin_eff'], s = 10)
+#plt.ylabel('$\chi_{eff}$')
+#plt.xlabel('Mtot')
+#plt.xscale('log')
+#plt.savefig(save_path + f'chi_eff_mtot1.png')
+#plt.close()
+
+#plt.hist(df['spin_eff'], bins = 100, density = True)
+#plt.ylabel('Density')
+#plt.xlabel('$\chi_{eff}$')
+#plt.savefig(save_path + f'chi_eff_histo.png')
+#plt.close()
+
+plt.hist(df['s1x'], bins = 100, density = True)
+plt.ylabel('Density')
+plt.xlabel('$\chi_{1x}$')
+plt.savefig(save_path + f'chi1x_histo.png')
 plt.close()
 
-plt.hist(df['spin_eff'], bins = 100, density = True)
+plt.hist(df['s2x'], bins = 100, density = True)
 plt.ylabel('Density')
-plt.xlabel('$\chi_{eff}$')
-plt.savefig(save_path + f'chi_eff_histo.png')
+plt.xlabel('$\chi_{2x}$')
+plt.savefig(save_path + f'chi2x_histo.png')
+plt.close()
+
+plt.hist(df['s1y'], bins = 100, density = True)
+plt.ylabel('Density')
+plt.xlabel('$\chi_{1y}$')
+plt.savefig(save_path + f'chi1y_histo.png')
+plt.close()
+
+plt.hist(df['s2y'], bins = 100, density = True)
+plt.ylabel('Density')
+plt.xlabel('$\chi_{2y}$')
+plt.savefig(save_path + f'chi2y_histo.png')
 plt.close()
 
 plt.hist(df['s1z'], bins = 100, density = True)
@@ -66,7 +97,6 @@ plt.ylabel('Density')
 plt.xlabel('$\chi_{1z}$')
 plt.savefig(save_path + f'chi1z_histo.png')
 plt.close()
-
 
 plt.hist(df['s2z'], bins = 100, density = True)
 plt.ylabel('Density')
