@@ -71,17 +71,13 @@ def create_tf(input_path, img_width, img_height, batch_size):
     print('Validation ', len(list_val_ds))
     print('Test ', len(list_test_ds))
 
-    #test_paths = set([os.path.basename(path.numpy().decode('utf-8')) for path in list_test_ds])
-
-    # Convert datasets to Python sets of file paths
-    train_paths = set([relpath(p, input_path + '/train') for p in list_train_ds])
-    val_paths   = set([relpath(p, input_path + '/val')   for p in list_val_ds])
+    # Convert datasets to Python sets of file basenames (test/ has no class
+    # subdirectory, so basename is the only basis train/val/test can be
+    # compared on consistently)
+    train_paths = set([os.path.basename(relpath(p, input_path + '/train')) for p in list_train_ds])
+    val_paths   = set([os.path.basename(relpath(p, input_path + '/val'))   for p in list_val_ds])
     test_paths  = set([os.path.basename(p.numpy().decode('utf-8')) for p in list_test_ds])
-    #train_paths = set([os.path.basename(path.numpy().decode('utf-8')) for path in list_train_ds])
-    #val_paths = set([os.path.basename(path.numpy().decode('utf-8')) for path in list_val_ds])
-    #test_paths = set([os.path.basename(path.numpy().decode('utf-8')) for path in list_test_ds])
 
-    
     # Check for overlaps via intersection
     train_val_overlap = train_paths & val_paths
     train_test_overlap = train_paths & test_paths

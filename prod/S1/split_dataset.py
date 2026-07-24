@@ -52,6 +52,14 @@ def main():
 
     assert abs(args.train + args.val + args.test - 1.0) < 1e-6, "We are losing images!"
 
+    # Start from a clean output directory every run: leaving stale symlinks
+    # from a previous run around lets a file keep its old split assignment
+    # (e.g. train) even after a re-shuffle puts it in a different split
+    # (e.g. test), leaking it into both.
+    if os.path.exists(args.out_dir):
+        print(f"Removing existing '{args.out_dir}' to avoid mixing splits across runs...")
+        shutil.rmtree(args.out_dir)
+
     # create the folders
     for sub in ("train/inj", "train/noise", "val/inj", "val/noise", "test"):
         os.makedirs(os.path.join(args.out_dir, sub), exist_ok=True)
