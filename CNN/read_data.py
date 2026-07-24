@@ -4,6 +4,10 @@ import os
 from PIL import Image
 from PIL.PngImagePlugin import PngInfo
 
+def relpath(path_tensor, base):
+    full = path_tensor.numpy().decode('utf-8')
+    return os.path.relpath(full,base)
+
 def create_tf(input_path, img_width, img_height, batch_size):
     #----- coordinates to read the data --------#
     path_train_inj = input_path + '/train/inj/'
@@ -70,9 +74,12 @@ def create_tf(input_path, img_width, img_height, batch_size):
     #test_paths = set([os.path.basename(path.numpy().decode('utf-8')) for path in list_test_ds])
 
     # Convert datasets to Python sets of file paths
-    train_paths = set([os.path.basename(path.numpy().decode('utf-8')) for path in list_train_ds])
-    val_paths = set([os.path.basename(path.numpy().decode('utf-8')) for path in list_val_ds])
-    test_paths = set([os.path.basename(path.numpy().decode('utf-8')) for path in list_test_ds])
+    train_paths = set([relpath(p, input_path + '/train') for p in list_train_ds])
+    val_paths   = set([relpath(p, input_path + '/val')   for p in list_val_ds])
+    test_paths  = set([os.path.basename(p.numpy().decode('utf-8')) for p in list_test_ds])
+    #train_paths = set([os.path.basename(path.numpy().decode('utf-8')) for path in list_train_ds])
+    #val_paths = set([os.path.basename(path.numpy().decode('utf-8')) for path in list_val_ds])
+    #test_paths = set([os.path.basename(path.numpy().decode('utf-8')) for path in list_test_ds])
 
     
     # Check for overlaps via intersection

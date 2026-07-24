@@ -11,9 +11,9 @@ from PIL import Image
 """
 
 # --- EDIT THESE PATHS ---
-folder_path_images = '/home/lorenzo-mobilia/EasyResNetPaper-v1/prod/S3/dataset_correct_seed_70k/test/'
-csv_test_results = '/home/lorenzo-mobilia/public_html/EasyResNetPaper-v1/S3/data_correct_seed_70k/test_scores.csv'
-output_dir = '/home/lorenzo-mobilia/public_html/EasyResNetPaper-v1/S3/data_correct_seed_70k/'                                     # where to save the output CSVs
+folder_path_images = '/home/lorenzo-mobilia/EasyResNetPaper-v1/prod/S4/Collective-Dataset/dataset_collected_70k/test'
+csv_test_results = '/home/lorenzo-mobilia/public_html/EasyResNetPaper-v1/S4/results_70k/test_scores.csv'
+output_dir = '/home/lorenzo-mobilia/public_html/EasyResNetPaper-v1/S4/results_70k/'                                     # where to save the output CSVs
 # -------------------------
 
 files_images = glob.glob(os.path.join(folder_path_images, '*.png'))
