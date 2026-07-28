@@ -10,10 +10,11 @@ import matplotlib.pyplot as plt
 from PIL import Image
 from PIL.PngImagePlugin import PngInfo
 
+from TTnet import ttmap_net
 from paper_net import paper_net, small_se_net, wide_net
 from read_data import create_tf
 
-MODEL_MAP = {"paper_net": paper_net, "small_se_net": small_se_net, "wide_net": wide_net}
+MODEL_MAP = {"paper_net": paper_net, "small_se_net": small_se_net, "wide_net": wide_net, "ttmap_net": ttmap_net}
 
 
 def read_png_metadata(path):
