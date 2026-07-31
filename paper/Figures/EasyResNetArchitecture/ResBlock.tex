@@ -1,0 +1,143 @@
+
+\documentclass[border=8pt, multi, tikz]{standalone} 
+\usepackage{import}
+\subimport{../layers/}{init}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usetikzlibrary{3d} %for including external image 
+
+\def\ConvColor{rgb:yellow,5;red,2.5;white,5}
+\def\BNColor{rgb:blue,2;green,1;white,4}      % <- new
+\def\ReLUColor{rgb:orange,5;white,3;black,2}
+\def\GAPColor{rgb:blue,2;black,1;white,4}
+\def\FcColor{rgb:blue,4;black,4;white,2}
+\def\ResBlockColor{rgb:blue,5;red,2.5;white,5}
+\def\ConvReluColor{rgb:yellow,5;red,5;white,5}
+\def\PoolColor{rgb:red,1;black,0.3}
+\def\UnpoolColor{rgb:blue,2;green,1;black,0.3}
+\def\FcColor{rgb:blue,5;red,2.5;white,5}
+\def\FcReluColor{rgb:blue,5;red,5;white,4}
+\def\SoftmaxColor{rgb:magenta,5;black,7}   
+\def\SumColor{rgb:blue,5;green,15}
+
+\newcommand{\copymidarrow}{\tikz \draw[-Stealth,line width=0.8mm,draw={rgb:blue,4;red,1;green,1;black,3}] (-0.3,0) -- ++(0.3,0);}
+
+\begin{document}
+\begin{tikzpicture}
+\tikzstyle{connection}=[ultra thick,every node/.style={sloped,allow upside down},draw=\edgecolor,opacity=0.7]
+\tikzstyle{copyconnection}=[ultra thick,every node/.style={sloped,allow upside down},draw={rgb:blue,4;red,1;green,1;black,3},opacity=0.7]
+
+\pic[shift={ (0,0,0) }] at (0,0,0) { 
+    Box={
+        name=conv1,
+        caption=Conv2D,
+        %xlabel={ { 8 } },   %% <- double braces + comma
+        %zlabel={\hspace*{0.4cm}},
+        fill=\ConvColor,
+        height=32,
+        width=2,
+        depth=32
+        }
+    };
+
+\pic[shift={ (1.2,0,0) }] at (conv1-east) { 
+    Box={
+        name=bn1,
+        caption=BN,
+        xlabel={ {  }, },
+        zlabel={},
+        fill=\BNColor,
+        height=32,
+        width=0.4,
+        depth=32
+    }
+};
+
+\draw [connection]  (conv1-east)    -- node {\midarrow} (bn1-west);
+
+\pic[shift={ (1.5,0,0) }] at (bn1-east) {
+    Box={
+        name=relu1,
+        caption=ReLU,
+        xlabel={ {  }, },
+        zlabel={},
+        fill=\FcReluColor,         %% or define \ReLUColor in to_cor()
+        height=32,
+        width=0.4,
+        depth=32
+    }
+};
+
+\draw [connection]  (bn1-east)    -- node {\midarrow} (relu1-west);
+
+\pic[shift={ (1.5,0,0) }] at (relu1-east) { 
+    Box={
+        name=conv2,
+        caption=Conv2D,
+        %xlabel={ { 8 } },   %% <- double braces + comma
+        %zlabel={\hspace*{0.4cm}256},
+        fill=\ConvColor,
+        height=32,
+        width=2,
+        depth=32
+        }
+    };
+
+\draw [connection]  (relu1-east)    -- node {\midarrow} (conv2-west);
+
+\pic[shift={ (1.2,0,0) }] at (conv2-east) { 
+    Box={
+        name=bn2,
+        caption=BN,
+        xlabel={ {  }, },
+        zlabel={},
+        fill=\BNColor,
+        height=32,
+        width=0.4,
+        depth=32
+    }
+};
+
+\draw [connection]  (conv2-east)    -- node {\midarrow} (bn2-west);
+
+\pic[shift={ (2,0,0) }] at (bn2-east) { 
+    Box={
+        name=conv3,
+        caption=Conv2D,
+        %xlabel={ { 8 } },   %% <- double braces + comma
+        %zlabel={\hspace*{0.4cm}256},
+        fill=\ConvColor,
+        height=32,
+        width=2,
+        depth=32
+        }
+    };
+
+\draw [connection]  (bn2-east)    -- node {\midarrow} (conv3-west);
+
+\pic[shift={(1.4,0,0)}] at (conv3-east) 
+    {Ball={
+        name=sum1,
+        fill=\SumColor,
+        opacity=0.6,
+        radius=2.5,
+        logo=$+$
+        }
+    };
+
+\draw [connection]  (conv3-east)    -- node {\midarrow} (sum1-west);
+
+% skip connection (squared path with rightward offset)
+\coordinate (conv1-top) at ($(conv1-north)+(0,1.45,0)$);
+\coordinate (sum1-top) at ($(sum1-north)+(0,1.45,0)$);
+\coordinate (skip-mid) at ($(conv1-top)+(10,0,0)$);
+
+\draw [copyconnection]
+      (conv1-north)
+  -- node {\copymidarrow} (conv1-top)
+  -- node {\copymidarrow} (skip-mid)
+  -- node {\copymidarrow} (sum1-top)
+  -- node {\copymidarrow} (sum1-north);
+
+\end{tikzpicture}
+\end{document}

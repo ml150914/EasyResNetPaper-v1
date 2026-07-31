@@ -1,0 +1,160 @@
+\documentclass[border=8pt, multi, tikz]{standalone} 
+\usepackage{import}
+\subimport{../layers/}{init}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usetikzlibrary{3d} %for including external image 
+
+\def\ConvColor{rgb:yellow,5;red,2.5;white,5}
+\def\BNColor{rgb:blue,2;green,1;white,4}
+\def\ReLUColor{rgb:orange,5;white,3;black,2}
+\def\GAPColor{rgb:blue,2;black,1;white,4}
+\def\ResBlockColor{rgb:blue,5;red,2.5;white,5}
+\def\ConvReluColor{rgb:yellow,5;red,5;white,5}
+\def\PoolColor{rgb:red,1;black,0.3}
+\def\UnpoolColor{rgb:blue,2;green,1;black,0.3}
+\def\FcColor{rgb:blue,5;red,2.5;white,5}
+\def\FcReluColor{rgb:blue,5;red,5;white,4}
+\def\SoftmaxColor{rgb:magenta,5;black,7}   
+\def\SumColor{rgb:blue,5;green,15}
+
+% colour of the shortcut branch, reused for the branch dot
+\def\SkipColor{rgb:blue,4;red,1;green,1;black,3}
+
+\newcommand{\copymidarrow}{\tikz \draw[-Stealth,line width=0.8mm,draw=\SkipColor] (-0.3,0) -- ++(0.3,0);}
+
+\begin{document}
+\begin{tikzpicture}
+\tikzstyle{connection}=[ultra thick,every node/.style={sloped,allow upside down},draw=\edgecolor,opacity=0.7]
+\tikzstyle{copyconnection}=[ultra thick,every node/.style={sloped,allow upside down},draw=\SkipColor,opacity=0.7]
+
+% height of the horizontal run of the shortcut
+\def\skipy{4.9}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  main branch
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pic[shift={ (0,0,0) }] at (0,0,0) { 
+    Box={
+        name=conv1,
+        caption=Conv2D,
+        fill=\ConvColor,
+        height=32,
+        width=2,
+        depth=32
+        }
+    };
+
+\pic[shift={ (1.2,0,0) }] at (conv1-east) { 
+    Box={
+        name=bn1,
+        caption=BN,
+        xlabel={ {  }, },
+        zlabel={},
+        fill=\BNColor,
+        height=32,
+        width=0.4,
+        depth=32
+    }
+};
+\draw [connection]  (conv1-east)    -- node {\midarrow} (bn1-west);
+
+\pic[shift={ (1.5,0,0) }] at (bn1-east) {
+    Box={
+        name=relu1,
+        caption=ReLU,
+        xlabel={ {  }, },
+        zlabel={},
+        fill=\FcReluColor,
+        height=32,
+        width=0.4,
+        depth=32
+    }
+};
+\draw [connection]  (bn1-east)    -- node {\midarrow} (relu1-west);
+
+\pic[shift={ (1.5,0,0) }] at (relu1-east) { 
+    Box={
+        name=conv2,
+        caption=Conv2D,
+        fill=\ConvColor,
+        height=32,
+        width=2,
+        depth=32
+        }
+    };
+\draw [connection]  (relu1-east)    -- node {\midarrow} (conv2-west);
+
+\pic[shift={ (1.2,0,0) }] at (conv2-east) { 
+    Box={
+        name=bn2,
+        caption=BN,
+        xlabel={ {  }, },
+        zlabel={},
+        fill=\BNColor,
+        height=32,
+        width=0.4,
+        depth=32
+    }
+};
+\draw [connection]  (conv2-east)    -- node {\midarrow} (bn2-west);
+
+\pic[shift={ (2,0,0) }] at (bn2-east) { 
+    Box={
+        name=conv3,
+        caption=Conv2D,
+        fill=\ConvColor,
+        height=32,
+        width=2,
+        depth=32
+        }
+    };
+\draw [connection]  (bn2-east)    -- node {\midarrow} (conv3-west);
+
+\pic[shift={(1.4,0,0)}] at (conv3-east) 
+    {Ball={
+        name=sum1,
+        fill=\SumColor,
+        opacity=0.6,
+        radius=2.5,
+        logo=$+$
+        }
+    };
+\draw [connection]  (conv3-east)    -- node {\midarrow} (sum1-west);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  block input, block output
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\coordinate (blockin)  at (-4.0,0,0);
+\coordinate (branch)   at (-2.4,0,0);   % where the shortcut leaves the input
+\coordinate (blockout) at ($(sum1-east)+(2.6,0,0)$);
+
+% input -> first Conv2D
+\draw [connection] (blockin) -- node {\midarrow} (conv1-west);
+
+% sum -> block output
+\draw [connection] (sum1-east) -- node {\midarrow} (blockout);
+
+\node[anchor=east, font=\small] at ($(blockin)+(-0.15,0,0)$)  {Input};
+\node[anchor=west, font=\small] at ($(blockout)+(0.15,0,0)$)  {Output};
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  identity shortcut: taken from the INPUT of the block
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\coordinate (skipA) at ($(branch)+(0,\skipy,0)$);
+\coordinate (skipB) at (skipA -| sum1-north);
+
+\draw [copyconnection]
+      (branch)
+  --  node {\copymidarrow} (skipA)
+  --  node {\copymidarrow} (skipB)
+  --  node {\copymidarrow} (sum1-north);
+
+% dot marking the branch point on the input line
+\fill[draw=\SkipColor, fill=\SkipColor] (branch) circle (3.2pt);
+
+\node[anchor=south, font=\small] at ($(skipA)!0.5!(skipB)+(0,0.30,0)$)
+  {identity shortcut};
+
+\end{tikzpicture}
+\end{document}

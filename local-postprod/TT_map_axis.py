@@ -94,11 +94,11 @@ FAMILIES = {
 # Glitch), ported from NicePlots.ipynb's "create side by side example picture"
 # cells. These raw full-resolution (8192x5436) TT-maps already exist locally,
 # no download needed.
-THESIS_TTMAP_DIR = "/Users/lorenzomobilia/Desktop/Lavoro/PhDUrbino/Tesi/tikz-pic"
+THESIS_TTMAP_DIR = "gwf"
 THESIS_PANELS = [
-    ("Gaussian Noise", f"{THESIS_TTMAP_DIR}/TTmap_GN_0.png"),
-    ("Injection", f"{THESIS_TTMAP_DIR}/TTmap_BNS_0.png"),
-    ("Injection + Glitch", f"{THESIS_TTMAP_DIR}/TTmap_BNS_GLITCH_0.png"),
+    ("Gaussian Noise", f"{THESIS_TTMAP_DIR}/TT_map_NOISE_0.png"),
+    ("Injection", f"{THESIS_TTMAP_DIR}/TT_map_SNR_0.png"),
+    ("Injection + Glitch", f"{THESIS_TTMAP_DIR}/TT_map_SNR_GLITCH_0.png"),
 ]
 THESIS_COMBINED_OUTPUT = f"{OUTPUT_DIR}/combined_TTmaps.png"
 
