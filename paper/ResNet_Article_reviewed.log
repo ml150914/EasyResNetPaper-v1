@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.19)  31 JUL 2026 18:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.19)  4 AUG 2026 12:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -760,10 +760,10 @@ File: pgfmoduleparser.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \@curXheight=\skip59
 )
 Class revtex4-2 Info: Unrecognized LaTeX tabular. Please update this document c
-lass! (Proceeding with fingers crossed.) on input line 32.
-Class revtex4-2 Info: cite was not loaded (OK!) on input line 32.
-Class revtex4-2 Info: mcite was not loaded (OK!) on input line 32.
-Class revtex4-2 Info: multicol was not loaded (OK!) on input line 32.
+lass! (Proceeding with fingers crossed.) on input line 43.
+Class revtex4-2 Info: cite was not loaded (OK!) on input line 43.
+Class revtex4-2 Info: mcite was not loaded (OK!) on input line 43.
+Class revtex4-2 Info: multicol was not loaded (OK!) on input line 43.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
@@ -773,25 +773,25 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 (./ResNet_Article_reviewed.aux)
 \openout1 = `ResNet_Article_reviewed.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-Package hyperref Info: Link coloring ON on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+Package hyperref Info: Link coloring ON on input line 43.
  (./ResNet_Article_reviewed.out)
 (./ResNet_Article_reviewed.out)
 \@outlinefile=\write5
@@ -822,7 +822,7 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-Class revtex4-2 Info: Taking \maketitle back from hyperref on input line 32.
+Class revtex4-2 Info: Taking \maketitle back from hyperref on input line 43.
 \openout3 = `ResNet_Article_reviewedNotes.bib'.
 
 
@@ -838,219 +838,288 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 ) [2] [3]
-<Figures//combined_TTmap_qscan.png, id=194, 983.8356pt x 442.5333pt>
+<Figures//combined_TTmap_qscan.png, id=205, 983.8356pt x 448.074pt>
 File: Figures//combined_TTmap_qscan.png Graphic file (type png)
 <use Figures//combined_TTmap_qscan.png>
 Package pdftex.def Info: Figures//combined_TTmap_qscan.png  used on input line 
 184.
-(pdftex.def)             Requested size: 510.0pt x 229.40286pt.
-<Figures//EasyResNet.png, id=204, 725.47035pt x 347.3778pt>
+(pdftex.def)             Requested size: 510.0pt x 232.27509pt.
+ [4]
+<Figures//EasyResNet.png, id=229, 725.47035pt x 347.3778pt>
 File: Figures//EasyResNet.png Graphic file (type png)
 <use Figures//EasyResNet.png>
 Package pdftex.def Info: Figures//EasyResNet.png  used on input line 209.
 (pdftex.def)             Requested size: 408.00156pt x 195.36772pt.
- [4]
-<Figures//ResBlock.png, id=219, 583.82115pt x 343.88475pt>
+<Figures//ResBlock.png, id=230, 544.1931pt x 344.0052pt>
 File: Figures//ResBlock.png Graphic file (type png)
 <use Figures//ResBlock.png>
 Package pdftex.def Info: Figures//ResBlock.png  used on input line 217.
-(pdftex.def)             Requested size: 255.0pt x 150.20258pt.
+(pdftex.def)             Requested size: 255.0pt x 161.19429pt.
 
 [5 <./Figures//combined_TTmap_qscan.png>]
-<Figures//Distance_opt_snr_S1.png, id=239, 478.4274pt x 383.5128pt>
+<Figures//Distance_opt_snr_S1.png, id=249, 478.9092pt x 379.1766pt>
 File: Figures//Distance_opt_snr_S1.png Graphic file (type png)
 <use Figures//Distance_opt_snr_S1.png>
 Package pdftex.def Info: Figures//Distance_opt_snr_S1.png  used on input line 2
 43.
-(pdftex.def)             Requested size: 246.0pt x 197.19237pt.
-<Figures//CDF_S1_Inj_Prob.png, id=240, 492.1587pt x 383.5128pt>
+(pdftex.def)             Requested size: 246.0pt x 194.76608pt.
+<Figures//CDF_S1_Inj_Prob.png, id=250, 487.8225pt x 379.4175pt>
 File: Figures//CDF_S1_Inj_Prob.png Graphic file (type png)
 <use Figures//CDF_S1_Inj_Prob.png>
 Package pdftex.def Info: Figures//CDF_S1_Inj_Prob.png  used on input line 249.
-(pdftex.def)             Requested size: 246.0pt x 191.69154pt.
- [6 <./Figures//EasyResNet.png> <./Figures//ResBlock.png>]
+(pdftex.def)             Requested size: 246.0pt x 191.33511pt.
+ [6 <./Figures//EasyResNet.png> <./Figures//ResBlock.png (PNG copy)>]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 264.
+ on input line 259.
 
-<Figures//Roc_Superimposed_S1.png, id=250, 492.1587pt x 383.7537pt>
+<Figures//Roc_Superimposed_S1.png, id=262, 487.8225pt x 379.1766pt>
 File: Figures//Roc_Superimposed_S1.png Graphic file (type png)
 <use Figures//Roc_Superimposed_S1.png>
 Package pdftex.def Info: Figures//Roc_Superimposed_S1.png  used on input line 2
-69.
-(pdftex.def)             Requested size: 246.0pt x 191.81195pt.
+70.
+(pdftex.def)             Requested size: 246.0pt x 191.21362pt.
 [7 <./Figures//Distance_opt_snr_S1.png> <./Figures//CDF_S1_Inj_Prob.png> <./Fig
 ures//Roc_Superimposed_S1.png>]
-<Figures//Distance_opt_snr_S2.png, id=270, 478.4274pt x 383.5128pt>
+<Figures//Distance_opt_snr_S2.png, id=284, 478.9092pt x 379.1766pt>
 File: Figures//Distance_opt_snr_S2.png Graphic file (type png)
 <use Figures//Distance_opt_snr_S2.png>
 Package pdftex.def Info: Figures//Distance_opt_snr_S2.png  used on input line 3
 37.
-(pdftex.def)             Requested size: 246.0pt x 197.19237pt.
-<Figures//Roc_Superimposed_S2.png, id=271, 492.1587pt x 383.7537pt>
+(pdftex.def)             Requested size: 246.0pt x 194.76608pt.
+<Figures//Roc_Superimposed_S2.png, id=285, 487.8225pt x 379.1766pt>
 File: Figures//Roc_Superimposed_S2.png Graphic file (type png)
 <use Figures//Roc_Superimposed_S2.png>
 Package pdftex.def Info: Figures//Roc_Superimposed_S2.png  used on input line 3
 43.
-(pdftex.def)             Requested size: 246.0pt x 191.81195pt.
- [8 <./Figures//Distance_opt_snr_S2.png> <./Figures//Roc_Superimposed_S2.png>]
-<Figures//Distance_opt_snr_S3.png, id=292, 478.4274pt x 383.5128pt>
+(pdftex.def)             Requested size: 246.0pt x 191.21362pt.
+ [8]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
+ on input line 352.
+
+<Figures//Distance_opt_snr_S3.png, id=305, 478.9092pt x 379.1766pt>
 File: Figures//Distance_opt_snr_S3.png Graphic file (type png)
 <use Figures//Distance_opt_snr_S3.png>
 Package pdftex.def Info: Figures//Distance_opt_snr_S3.png  used on input line 3
 69.
-(pdftex.def)             Requested size: 246.0pt x 197.19237pt.
-<Figures//Roc_Superimposed_S3.png, id=293, 492.1587pt x 383.7537pt>
+(pdftex.def)             Requested size: 246.0pt x 194.76608pt.
+<Figures//Roc_Superimposed_S3.png, id=306, 487.8225pt x 379.1766pt>
 File: Figures//Roc_Superimposed_S3.png Graphic file (type png)
 <use Figures//Roc_Superimposed_S3.png>
 Package pdftex.def Info: Figures//Roc_Superimposed_S3.png  used on input line 3
 75.
-(pdftex.def)             Requested size: 246.0pt x 191.81195pt.
- [9 <./Figures//Distance_opt_snr_S3.png> <./Figures//Roc_Superimposed_S3.png>]
-<Figures//Superimposed_axis.png, id=308, 411.6981pt x 282.5757pt>
+(pdftex.def)             Requested size: 246.0pt x 191.21362pt.
+[9 <./Figures//Distance_opt_snr_S2.png> <./Figures//Roc_Superimposed_S2.png> <.
+/Figures//Distance_opt_snr_S3.png> <./Figures//Roc_Superimposed_S3.png>]
+<Figures//Extreme_spin_axis.png, id=317, 421.575pt x 290.2845pt>
+File: Figures//Extreme_spin_axis.png Graphic file (type png)
+<use Figures//Extreme_spin_axis.png>
+Package pdftex.def Info: Figures//Extreme_spin_axis.png  used on input line 393
+.
+(pdftex.def)             Requested size: 246.0pt x 169.39273pt.
+<Figures//Superimposed_axis.png, id=322, 421.575pt x 290.2845pt>
 File: Figures//Superimposed_axis.png Graphic file (type png)
 <use Figures//Superimposed_axis.png>
-Package pdftex.def Info: Figures//Superimposed_axis.png  used on input line 410
+Package pdftex.def Info: Figures//Superimposed_axis.png  used on input line 407
 .
-(pdftex.def)             Requested size: 246.0pt x 168.8482pt.
-<Figures//Superimposed_axis_zoom.png, id=309, 363.0363pt x 311.4837pt>
+(pdftex.def)             Requested size: 246.0pt x 169.39273pt.
+<Figures//Superimposed_axis_zoom.png, id=323, 371.4678pt x 318.9516pt>
 File: Figures//Superimposed_axis_zoom.png Graphic file (type png)
 <use Figures//Superimposed_axis_zoom.png>
 Package pdftex.def Info: Figures//Superimposed_axis_zoom.png  used on input lin
-e 417.
-(pdftex.def)             Requested size: 196.80075pt x 168.85458pt.
-<Figures//HM_axis.png, id=313, 411.6981pt x 282.5757pt>
+e 414.
+(pdftex.def)             Requested size: 196.80075pt x 168.98026pt.
+<Figures//HM_axis.png, id=327, 421.575pt x 290.2845pt>
 File: Figures//HM_axis.png Graphic file (type png)
 <use Figures//HM_axis.png>
-Package pdftex.def Info: Figures//HM_axis.png  used on input line 432.
-(pdftex.def)             Requested size: 246.0pt x 168.8482pt.
- [10 <./Figures//Superimposed_axis.png> <./Figures//Superimposed_axis_zoom.png>
-]
+Package pdftex.def Info: Figures//HM_axis.png  used on input line 429.
+(pdftex.def)             Requested size: 246.0pt x 169.39273pt.
+
+[10 <./Figures//Extreme_spin_axis.png>]
 
 LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 440.
+ on input line 437.
 
-<Figures//Precessing_axis.png, id=335, 411.6981pt x 282.5757pt>
+<Figures//Precessing_axis.png, id=344, 421.575pt x 290.2845pt>
 File: Figures//Precessing_axis.png Graphic file (type png)
 <use Figures//Precessing_axis.png>
-Package pdftex.def Info: Figures//Precessing_axis.png  used on input line 444.
-(pdftex.def)             Requested size: 246.0pt x 168.8482pt.
-<Figures//Eccentricity_axis.png, id=340, 411.6981pt x 282.5757pt>
+Package pdftex.def Info: Figures//Precessing_axis.png  used on input line 441.
+(pdftex.def)             Requested size: 246.0pt x 169.39273pt.
+[11 <./Figures//Superimposed_axis.png> <./Figures//Superimposed_axis_zoom.png> 
+<./Figures//HM_axis.png> <./Figures//Precessing_axis.png>]
+<Figures//Eccentricity_axis.png, id=365, 421.575pt x 290.2845pt>
 File: Figures//Eccentricity_axis.png Graphic file (type png)
 <use Figures//Eccentricity_axis.png>
-Package pdftex.def Info: Figures//Eccentricity_axis.png  used on input line 456
+Package pdftex.def Info: Figures//Eccentricity_axis.png  used on input line 453
 .
-(pdftex.def)             Requested size: 246.0pt x 168.8482pt.
-[11 <./Figures//HM_axis.png> <./Figures//Precessing_axis.png> <./Figures//Eccen
-tricity_axis.png>]
-<Figures//Roc_Superimposed_S4.png, id=356, 492.1587pt x 383.7537pt>
+(pdftex.def)             Requested size: 246.0pt x 169.39273pt.
+<Figures//Roc_Superimposed_S4.png, id=368, 487.8225pt x 379.1766pt>
 File: Figures//Roc_Superimposed_S4.png Graphic file (type png)
 <use Figures//Roc_Superimposed_S4.png>
 Package pdftex.def Info: Figures//Roc_Superimposed_S4.png  used on input line 4
-67.
-(pdftex.def)             Requested size: 246.0pt x 191.81195pt.
-<Figures//RocScatter_AllTags.png, id=357, 1525.8606pt x 726.7953pt>
+64.
+(pdftex.def)             Requested size: 246.0pt x 191.21362pt.
+<Figures//RocScatter_AllTags.png, id=369, 1525.8606pt x 726.7953pt>
 File: Figures//RocScatter_AllTags.png Graphic file (type png)
 <use Figures//RocScatter_AllTags.png>
 Package pdftex.def Info: Figures//RocScatter_AllTags.png  used on input line 47
-4.
+1.
 (pdftex.def)             Requested size: 510.0pt x 242.91512pt.
- [12 <./Figures//Roc_Superimposed_S4.png>] [13 <./Figures//RocScatter_AllTags.p
-ng>]
-<Figures//Q-trasnform-3injection-mcbelow.png, id=375, 578.16pt x 289.08pt>
+ [12 <./Figures//Eccentricity_axis.png> <./Figures//Roc_Superimposed_S4.png>] [
+13 <./Figures//RocScatter_AllTags.png>] [14]
+<Figures//Q-trasnform-3injection-mcbelow.png, id=396, 578.16pt x 289.08pt>
 File: Figures//Q-trasnform-3injection-mcbelow.png Graphic file (type png)
 <use Figures//Q-trasnform-3injection-mcbelow.png>
 Package pdftex.def Info: Figures//Q-trasnform-3injection-mcbelow.png  used on i
-nput line 570.
+nput line 572.
 (pdftex.def)             Requested size: 246.0pt x 122.9963pt.
-<Figures//Q-trasnform-3injection-mcabove.png, id=376, 578.16pt x 289.08pt>
+<Figures//Q-trasnform-3injection-mcabove.png, id=397, 578.16pt x 289.08pt>
 File: Figures//Q-trasnform-3injection-mcabove.png Graphic file (type png)
 <use Figures//Q-trasnform-3injection-mcabove.png>
 Package pdftex.def Info: Figures//Q-trasnform-3injection-mcabove.png  used on i
-nput line 578.
+nput line 580.
 (pdftex.def)             Requested size: 246.0pt x 122.9963pt.
  (./ResNet_Article_reviewed.bbl
-Underfull \hbox (badness 5345) in paragraph at lines 86--92
+Underfull \hbox (badness 5345) in paragraph at lines 110--119
  []\T1/cmr/m/n/9 R. Ab-bott \T1/cmr/m/it/9 et al. \T1/cmr/m/n/9 (LIGO Sci-en-ti
 fic Col-lab-o-ra-tion
  []
 
 
-Underfull \hbox (badness 2460) in paragraph at lines 86--92
- \T1/cmr/m/n/9 and Virgo Col-lab-o-ra-tion), Phys. Rev. D  (2021),
+Underfull \hbox (badness 3158) in paragraph at lines 110--119
+ \T1/cmr/m/n/9 LIGO and Virgo dur-ing the sec-ond part of the
  []
 
 
-Underfull \hbox (badness 4505) in paragraph at lines 198--204
- []\T1/cmr/m/n/9 M. Ar-mano, H. Au-d-ley, J. Baird, \T1/cmr/m/it/9 et al.\T1/cm
-r/m/n/9 , Lisa
+Underfull \hbox (badness 2181) in paragraph at lines 123--133
+ []\T1/cmr/m/n/9 A. G. Abac \T1/cmr/m/it/9 et al. \T1/cmr/m/n/9 (LIGO Sci-en-ti
+fic Col-lab-o-ra-tion
  []
 
-[14 <./Figures//Q-trasnform-3injection-mcbelow.png> <./Figures//Q-trasnform-3in
+
+Underfull \hbox (badness 1406) in paragraph at lines 163--172
+ \T1/cmr/m/n/9 pli-ca-tions of the $\OT1/cmr/m/n/9 150 \OML/cmm/m/it/9 m[]$ \T1
+/cmr/m/n/9 bi-nary black hole merger
+ []
+
+
+Underfull \hbox (badness 3312) in paragraph at lines 163--172
+ \T1/cmr/m/n/9 GW190521, [][]As-tro-phys. J. Lett. \T1/cmr/bx/n/9 900\T1/cmr/m/
+n/9 , L13 (2020)[][],
+ []
+
+
+Underfull \hbox (badness 1107) in paragraph at lines 176--183
+ []\T1/cmr/m/n/9 J. Aasi \T1/cmr/m/it/9 et al. \T1/cmr/m/n/9 (LIGO Sci-en-tific
+ Col-lab-o-ra-tion), Ad-
+ []
+
+
+Underfull \hbox (badness 1189) in paragraph at lines 187--195
+ []\T1/cmr/m/n/9 F. Ac-er-nese \T1/cmr/m/it/9 et al. \T1/cmr/m/n/9 (Virgo Col-l
+ab-o-ra-tion), Ad-vanced
+ []
+
+[15 <./Figures//Q-trasnform-3injection-mcbelow.png> <./Figures//Q-trasnform-3in
 jection-mcabove.png>]
-Underfull \hbox (badness 1389) in paragraph at lines 323--330
- \T1/cmr/m/n/9 learning pipeline for real-time de-tec-tion of grav-i-ta-
+Underfull \hbox (badness 1137) in paragraph at lines 242--248
+ []\T1/cmr/m/n/9 M. Evans \T1/cmr/m/it/9 et al.\T1/cmr/m/n/9 , A hori-zon study
+ for Cos-mic Ex-
  []
 
 
-Underfull \hbox (badness 1789) in paragraph at lines 346--353
- []\T1/cmr/m/n/9 V. Skliris, M. R. K. Nor-man, and P. J. Sut-ton,
+Underfull \hbox (badness 1259) in paragraph at lines 309--318
+ \T1/cmr/m/n/9 KAGRA ob-serv-ing run, [][]Class. Quan-tum Grav. \T1/cmr/bx/n/9 
+42\T1/cmr/m/n/9 ,
  []
 
 
-Underfull \hbox (badness 2961) in paragraph at lines 358--365
- []\T1/cmr/m/n/9 M. B. Schäfer, O. Ze-lenka, A. H. Nitz, \T1/cmr/m/it/9 et al.\
-T1/cmr/m/n/9 ,
+Underfull \hbox (badness 1259) in paragraph at lines 321--333
+ []\T1/cmr/m/n/9 S. Hooper \T1/cmr/m/it/9 et al.\T1/cmr/m/n/9 , Summed par-al-l
+el in-fi-nite im-pulse
  []
 
 
-Underfull \hbox (badness 1701) in paragraph at lines 381--387
+Underfull \hbox (badness 1117) in paragraph at lines 392--401
+ \T1/cmr/m/n/9 M. W. Cough-lin, P. Har-ris, and E. Kat-savouni-dis,
+ []
+
+
+Underfull \hbox (badness 1242) in paragraph at lines 489--497
+ []\T1/cmr/m/n/9 D. Bev-eridge, A. McLeod, L. Wen, W. Guo, and
+ []
+
+
+Underfull \hbox (badness 1701) in paragraph at lines 503--510
  []\T1/cmr/m/n/9 T. S. Ya-mamoto, K. Can-non, H. Mo-to-hashi, and
  []
 
 
-Underfull \hbox (badness 5161) in paragraph at lines 517--523
- []\T1/cmr/m/n/9 C. Hanna, \T1/cmr/m/it/9 SEARCH-ING FOR GRAV-I-TA-TIONAL
+Underfull \hbox (badness 3690) in paragraph at lines 574--582
+ []\T1/cmr/m/n/9 K. Ka-canja, A. H. Nitz, S. Wu, M. Cusi-nato,
+ []
+
+[16]
+Underfull \hbox (badness 2181) in paragraph at lines 669--679
+ []\T1/cmr/m/n/9 A. G. Abac \T1/cmr/m/it/9 et al. \T1/cmr/m/n/9 (LIGO Sci-en-ti
+fic Col-lab-o-ra-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 517--523
- \T1/cmr/m/it/9 WAVES FROM BI-NARY SYS-TEMS IN NON-
+Underfull \hbox (badness 2181) in paragraph at lines 683--692
+ []\T1/cmr/m/n/9 A. G. Abac \T1/cmr/m/it/9 et al. \T1/cmr/m/n/9 (LIGO Sci-en-ti
+fic Col-lab-o-ra-tion
  []
 
 
-Underfull \hbox (badness 1577) in paragraph at lines 789--794
+Underfull \hbox (badness 1028) in paragraph at lines 683--692
+ \T1/cmr/m/n/9 GWTC-4.0: An in-tro-duc-tion to ver-sion 4.0 of the
+ []
+
+
+Underfull \hbox (badness 1365) in paragraph at lines 713--724
+ []\T1/cmr/m/n/9 D. Shoe-maker, \T1/cmr/m/it/9 Ad-vanced LIGO an-tic-i-pated se
+n-si-tiv-
+ []
+
+
+Underfull \hbox (badness 1515) in paragraph at lines 713--724
+ \T1/cmr/m/it/9 ity curves\T1/cmr/m/n/9 , Tech. Rep. LIGO-T0900288 (LIGO Sci-
+ []
+
+
+Underfull \hbox (badness 3302) in paragraph at lines 713--724
+ \T1/cmr/m/n/9 en-tific Col-lab-o-ra-tion, 2009) [][]$\T1/cmtt/m/n/9 https : / 
+/ dcc . ligo . org /
+ []
+
+
+Underfull \hbox (badness 1577) in paragraph at lines 976--985
  []\T1/cmr/m/n/9 L. Pom-pili, A. Buo-nanno, H. Es-tel-lés, M. Khalil,
  []
 
-[15]
-Underfull \hbox (badness 6047) in paragraph at lines 848--855
+
+Underfull \hbox (badness 6047) in paragraph at lines 1049--1058
  \T1/cmr/m/n/9 D. P. Mi-haylov, S. Os-sokine, L. Pom-pili, and
  []
 
+[17]) [18] (./ResNet_Article_reviewed.aux)
 
-Underfull \hbox (badness 1629) in paragraph at lines 848--855
- \T1/cmr/m/n/9 one-body wave-forms for bi-nary black holes[][] (2023),
- []
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-
-Underfull \hbox (badness 2635) in paragraph at lines 888--892
- \T1/cmr/m/n/9 L. E. Kid-der, H. P. Pfeif-fer, H. R. Rüter, and
- []
-
-) [16] (./ResNet_Article_reviewed.aux)
 Package rerunfilecheck Info: File `ResNet_Article_reviewed.out' has not changed
 .
-(rerunfilecheck)             Checksum: 8EEFBBFC79977687238FB628CFAEEA87;2275.
+(rerunfilecheck)             Checksum: B6A57AEA89F61281E2F90B21559FCEA2;2275.
  ) 
 Here is how much of TeX's memory you used:
- 24382 strings out of 476025
- 456675 string characters out of 5790017
- 1892388 words of memory out of 5000000
- 44307 multiletter control sequences out of 15000+600000
- 522159 words of font info for 52 fonts, out of 8000000 for 9000
+ 24402 strings out of 476025
+ 457111 string characters out of 5790017
+ 1888388 words of memory out of 5000000
+ 44323 multiletter control sequences out of 15000+600000
+ 521706 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,13n,94p,1639b,771s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,11n,94p,2230b,780s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></
@@ -1073,11 +1142,12 @@ st/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2023/texmf-dist
 onts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2023/texmf-dist/fon
 ts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2023/texmf-dist/fonts
 /type1/public/cm-super/sfti0900.pfb></usr/local/texlive/2023/texmf-dist/fonts/t
-ype1/public/cm-super/sftt1000.pfb>
-Output written on ResNet_Article_reviewed.pdf (16 pages, 19219570 bytes).
+ype1/public/cm-super/sftt0900.pfb></usr/local/texlive/2023/texmf-dist/fonts/typ
+e1/public/cm-super/sftt1000.pfb>
+Output written on ResNet_Article_reviewed.pdf (18 pages, 19510422 bytes).
 PDF statistics:
- 642 PDF objects out of 1000 (max. 8388607)
- 535 compressed objects within 6 object streams
- 133 named destinations out of 1000 (max. 500000)
- 220 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 735 PDF objects out of 1000 (max. 8388607)
+ 621 compressed objects within 7 object streams
+ 136 named destinations out of 1000 (max. 500000)
+ 225 words of extra memory for PDF output out of 10000 (max. 10000000)
 

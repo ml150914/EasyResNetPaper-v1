@@ -8,13 +8,13 @@ plt.rcParams.update({
     "text.usetex": True,
     "font.family": "serif",
     "font.serif": ["Times New Roman"],
-    "font.size": 13,
-    "axes.titlesize": 15,
+    "font.size": 15,
+    "axes.titlesize": 17,
     "axes.titleweight": "bold",
     "axes.titlepad": 10,
-    "axes.labelsize": 13,
-    "xtick.labelsize": 11,
-    "ytick.labelsize": 11,
+    "axes.labelsize": 15,
+    "xtick.labelsize": 13,
+    "ytick.labelsize": 13,
     "axes.spines.top": False,
     "axes.spines.right": False,
     "axes.axisbelow": True,
@@ -24,7 +24,7 @@ plt.rcParams.update({
     "legend.frameon": True,
     "legend.framealpha": 0.9,
     "legend.edgecolor": "0.8",
-    "legend.fontsize": 11,
+    "legend.fontsize": 13,
     "figure.autolayout": False,
     "savefig.dpi": 300,
     "savefig.bbox": "tight",
@@ -368,7 +368,7 @@ def cumulative_stat(df1, df2, stat, label, save):
     plt.close(fig)
 
 
-simulation = 'S1'
+simulation = 'S4'
 
 file_inj = f'/Users/lorenzomobilia/Desktop/Lavoro/PhDUrbino/IJC_lab/EasyResNetPaper-v1-1/local-postprod/csv_downloads/dfInj_test_dataset_{simulation}.csv'
 file_noise = f'/Users/lorenzomobilia/Desktop/Lavoro/PhDUrbino/IJC_lab/EasyResNetPaper-v1-1/local-postprod/csv_downloads/dfNoise_test_dataset_{simulation}.csv'

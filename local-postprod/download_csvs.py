@@ -8,7 +8,7 @@ from urllib.parse import unquote, urljoin
 import requests
 from bs4 import BeautifulSoup
 
-DEFAULT_URL = "http://et-vd.ijclab.in2p3.fr/~lorenzo-mobilia/EasyResNetPaper-v1/S1/results_dataset_S1_78k_paper_net/"
+DEFAULT_URL = "http://et-vd.ijclab.in2p3.fr/~lorenzo-mobilia/EasyResNetPaper-v1/S1/results_dataset_S1_78k_smeared/"
 
 # Original filename -> cleaner base name (without extension or dataset suffix)
 CLEAN_NAME_OVERRIDES = {
@@ -61,7 +61,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("url", nargs="?", default=DEFAULT_URL, help="Directory index URL")
     parser.add_argument("-o", "--out-dir", default="csv_downloads", help="Output directory")
-    parser.add_argument("-f", "--save-as", default="S1-noise-debug-78k-paper-net", help="Simulation")
+    parser.add_argument("-f", "--save-as", default="S1-smeared", help="Simulation")
     args = parser.parse_args()
 
     download_csvs(args.url, args.out_dir, args.save_as)

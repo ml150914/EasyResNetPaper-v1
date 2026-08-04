@@ -32,7 +32,7 @@
 \citation{cwb1,cwb2}
 \citation{ml_pipeline2024,deepresnet2022,cnn_unmodelled2024}
 \citation{mlgwsc1_mock}
-\citation{bns_dl_pipeline2024}
+\citation{bns_dl_pipeline2024,3yph-35r4}
 \citation{arXiv:2512.12399}
 \newlabel{FirstPage}{{}{1}{}{section*.1}{}}
 \@writefile{toc}{\contentsline {title}{Deep Learning Search for Gravitational Waves from Compact Binary Coalescence}{1}{section*.2}\protected@file@percent }
@@ -48,6 +48,7 @@
 \citation{gstlal1}
 \citation{allen2005_chi2}
 \@writefile{toc}{\contentsline {section}{\numberline {II}Matched-filtering searches}{2}{section*.4}\protected@file@percent }
+\newlabel{matched-filtering-searches}{{II}{2}{}{section*.4}{}}
 \newlabel{eq:SNR}{{1}{2}{}{equation.2.1}{}}
 \newlabel{eq:mf}{{2}{2}{}{equation.2.2}{}}
 \newlabel{eq:complex-snr}{{3}{2}{}{equation.2.3}{}}
@@ -60,12 +61,12 @@
 \citation{gwtc4methods}
 \citation{gwtc4intro}
 \citation{oshea2015_cnn_intro}
-\citation{owen1996_templates}
 \newlabel{eq:chi-sq}{{5}{3}{}{equation.2.5}{}}
 \newlabel{eq:SNR-rw}{{6}{3}{}{equation.2.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {III}The Time-Template SNR Map}{3}{section*.5}\protected@file@percent }
-\newlabel{sec:TTmap}{{III}{3}{}{section*.5}{}}
+\newlabel{TTmap}{{III}{3}{}{section*.5}{}}
 \newlabel{eq:chirp-mass}{{7}{3}{}{equation.3.7}{}}
+\citation{owen1996_templates}
 \citation{Shoemaker2009}
 \citation{seobnrv4}
 \citation{seobnrv4rom}
@@ -75,42 +76,47 @@
 \citation{LeCun2015}
 \citation{he2015resnet}
 \@writefile{toc}{\contentsline {section}{\numberline {IV}Residual Network Algorithm}{4}{section*.7}\protected@file@percent }
+\newlabel{ResNet}{{IV}{4}{}{section*.7}{}}
 \citation{bn}
 \citation{krizhevsky2012imagenet}
 \citation{lin2014network}
-\citation{softmax}
 \citation{Adam}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Examples of the TT-SNR-Map obtained by piling up the $\rho (t)$ after the normalization procedure. The left picture corresponds to Gaussian Noise solely, on the center to an injected signal and on the right the TT-SNR Map resulting from an injected signal with a glitch superimposed. The injected signal consists in a BNS system of $1.4 - 1.4M_\odot $ at $50$Mpc ($\rho _\mathrm  {opt} = 65.1$), while the glitch is a sinGaussian signal generated with parameteres $f_0 = 82.74$, $Q = 232.11$, Amplitude $ A = 8.82\times 10^{-22}$, $\phi _0 = 4.01$ injected at $-8.08$s before the chirp time of the BNS signal.\relax }}{5}{figure.caption.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Examples of the TT-SNR-Map (top) obtained by piling up the $\rho (t)$ after the normalization procedure along with its spectrogram representation (bottom). The left panel shows Gaussian noise only, the centre panel an injected signal, and the right panel a signal with a superimposed glitch. The injected signal consists of a BNS system of $1.4 - 1.4M_\odot $ at $50$Mpc ($\rho _\mathrm  {opt} = 65.1$), while the glitch is a sine-Gaussian signal generated with parameters $f_0 = 82.74$, $Q = 232.11$, Amplitude $ A = 8.82\times 10^{-22}$, $\phi _0 = 4.01$ injected at $8.08$s before the chirp time of the BNS signal.\relax }}{5}{figure.caption.6}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:TT-SNR MAP-Snr}{{1}{5}{Examples of the TT-SNR-Map obtained by piling up the $\rho (t)$ after the normalization procedure. The left picture corresponds to Gaussian Noise solely, on the center to an injected signal and on the right the TT-SNR Map resulting from an injected signal with a glitch superimposed. The injected signal consists in a BNS system of $1.4 - 1.4M_\odot $ at $50$Mpc ($\rho _\mathrm {opt} = 65.1$), while the glitch is a sinGaussian signal generated with parameteres $f_0 = 82.74$, $Q = 232.11$, Amplitude $ A = 8.82\times 10^{-22}$, $\phi _0 = 4.01$ injected at $-8.08$s before the chirp time of the BNS signal.\relax }{figure.caption.6}{}}
+\newlabel{fig:TT-SNR MAP-Snr}{{1}{5}{Examples of the TT-SNR-Map (top) obtained by piling up the $\rho (t)$ after the normalization procedure along with its spectrogram representation (bottom). The left panel shows Gaussian noise only, the centre panel an injected signal, and the right panel a signal with a superimposed glitch. The injected signal consists of a BNS system of $1.4 - 1.4M_\odot $ at $50$Mpc ($\rho _\mathrm {opt} = 65.1$), while the glitch is a sine-Gaussian signal generated with parameters $f_0 = 82.74$, $Q = 232.11$, Amplitude $ A = 8.82\times 10^{-22}$, $\phi _0 = 4.01$ injected at $8.08$s before the chirp time of the BNS signal.\relax }{figure.caption.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {V}Simulation 1}{5}{section*.10}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces EasyResNet architecture. A convolutional stem (Conv2D-BN-ReLU) processes the input and feeds three residual blocks (ResBlock1-3). The final feature maps are reduced by global average pooling (GAP) to a feature vector, regularized with dropout, and passed to a fully connected (FC) layer for classification. Arrows indicate data flow; numbers below the blocks denote channel counts (and, where shown, spatial dimensions)\relax }}{6}{figure.caption.8}\protected@file@percent }
-\newlabel{fig:ResNet-scheme}{{2}{6}{EasyResNet architecture. A convolutional stem (Conv2D-BN-ReLU) processes the input and feeds three residual blocks (ResBlock1-3). The final feature maps are reduced by global average pooling (GAP) to a feature vector, regularized with dropout, and passed to a fully connected (FC) layer for classification. Arrows indicate data flow; numbers below the blocks denote channel counts (and, where shown, spatial dimensions)\relax }{figure.caption.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Residual block. The lower arrow represents the input passing through a sequence of convolutions and normalizations. The upper one carries the identity. The green \(\oplus \) denotes element-wise addition. Arrow directions indicate data flow through the layers (Conv2D-BN-ReLU-Conv2D-BN-Conv2D in this example).\relax }}{6}{figure.caption.9}\protected@file@percent }
-\newlabel{fig:ResBlock-zoom}{{3}{6}{Residual block. The lower arrow represents the input passing through a sequence of convolutions and normalizations. The upper one carries the identity. The green \(\oplus \) denotes element-wise addition. Arrow directions indicate data flow through the layers (Conv2D-BN-ReLU-Conv2D-BN-Conv2D in this example).\relax }{figure.caption.9}{}}
-\citation{population_gwtc3}
-\newlabel{fig:opt-snr-GN}{{4a}{7}{Distribution of injected signals for $\rho _\mathrm {opt}$ - distance Mpc - CNN output\relax }{figure.caption.11}{}}
-\newlabel{sub@fig:opt-snr-GN}{{a}{7}{Distribution of injected signals for $\rho _\mathrm {opt}$ - distance Mpc - CNN output\relax }{figure.caption.11}{}}
-\newlabel{fig:CDF-GN}{{4b}{7}{CDFs for Noise - Signal population\relax }{figure.caption.11}{}}
-\newlabel{sub@fig:CDF-GN}{{b}{7}{CDFs for Noise - Signal population\relax }{figure.caption.11}{}}
+\newlabel{simulation-1}{{V}{5}{}{section*.10}{}}
+\citation{mlgwsc1_mock}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces EasyResNet architecture. A convolutional stem (Conv2D-BN-ReLU) processes the input and feeds three residual blocks (ResBlock1-3). The final feature maps are reduced by global average pooling (GAP) to a feature vector, regularized with dropout, and passed to a fully connected (FC) layer for classification. Arrows indicate data flow; numbers below the blocks denote channel counts (and, where shown, spatial dimensions).\relax }}{6}{figure.caption.8}\protected@file@percent }
+\newlabel{fig:ResNet-scheme}{{2}{6}{EasyResNet architecture. A convolutional stem (Conv2D-BN-ReLU) processes the input and feeds three residual blocks (ResBlock1-3). The final feature maps are reduced by global average pooling (GAP) to a feature vector, regularized with dropout, and passed to a fully connected (FC) layer for classification. Arrows indicate data flow; numbers below the blocks denote channel counts (and, where shown, spatial dimensions).\relax }{figure.caption.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Residual block. The lower arrow represents the input passing through a sequence of convolutions and normalizations. The upper one carries the identity. The green \(\oplus \) denotes element-wise addition. Arrow directions indicate data flow through the layers (Conv2D-BN-ReLU-Conv2D-BN in this example).\relax }}{6}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:ResBlock-zoom}{{3}{6}{Residual block. The lower arrow represents the input passing through a sequence of convolutions and normalizations. The upper one carries the identity. The green \(\oplus \) denotes element-wise addition. Arrow directions indicate data flow through the layers (Conv2D-BN-ReLU-Conv2D-BN in this example).\relax }{figure.caption.9}{}}
+\citation{arXiv:2512.12399}
+\citation{arXiv:2512.12399}
+\newlabel{fig:opt-snr-GN}{{4a}{7}{Injected signals distribution in the $\rho _\mathrm {opt}$ --- distance [Mpc] plane, colored by CNN output.\relax }{figure.caption.11}{}}
+\newlabel{sub@fig:opt-snr-GN}{{a}{7}{Injected signals distribution in the $\rho _\mathrm {opt}$ --- distance [Mpc] plane, colored by CNN output.\relax }{figure.caption.11}{}}
+\newlabel{fig:CDF-GN}{{4b}{7}{CDFs for the noise and signal populations.\relax }{figure.caption.11}{}}
+\newlabel{sub@fig:CDF-GN}{{b}{7}{CDFs for the noise and signal populations.\relax }{figure.caption.11}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Results for purely Gaussian Noise and BNS injections.\relax }}{7}{figure.caption.11}\protected@file@percent }
 \newlabel{fig:GN-results}{{4}{7}{Results for purely Gaussian Noise and BNS injections.\relax }{figure.caption.11}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Receiver Operating Characteristic Curve considering injections in pure Gaussian noise.\relax }}{7}{figure.caption.12}\protected@file@percent }
 \newlabel{fig:ROC-S1}{{5}{7}{Receiver Operating Characteristic Curve considering injections in pure Gaussian noise.\relax }{figure.caption.12}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {VI}Simulation 2}{7}{section*.13}\protected@file@percent }
+\citation{population_gwtc3}
 \citation{allen2012findchirp}
 \citation{glitches_sine_gaussian_2014}
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Simulation 2}{8}{section*.13}\protected@file@percent }
+\newlabel{simulation-2}{{VI}{8}{}{section*.13}{}}
 \newlabel{eq:chirp-distance}{{11}{8}{}{equation.6.11}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Parameter ranges used for the injected sine-Gaussian signals.\relax }}{8}{table.caption.14}\protected@file@percent }
 \newlabel{tab:sine-Gaussian}{{I}{8}{Parameter ranges used for the injected sine-Gaussian signals.\relax }{table.caption.14}{}}
-\newlabel{fig:opt-snr-S2}{{6a}{8}{Simulation 2: Distribution of injected signals for $\rho _\mathrm {opt}$ - chirp distance $d_\mathrm {chirp}$ [Mpc] - CNN output\relax }{figure.caption.15}{}}
-\newlabel{sub@fig:opt-snr-S2}{{a}{8}{Simulation 2: Distribution of injected signals for $\rho _\mathrm {opt}$ - chirp distance $d_\mathrm {chirp}$ [Mpc] - CNN output\relax }{figure.caption.15}{}}
-\newlabel{fig:ROC-Simulation2}{{6b}{8}{Simulation 2: ROC curves for $\rho _\mathrm {rw}^\mathrm {max}$, $r$ and $\rho ^\mathrm {max}$ statistics.\relax }{figure.caption.15}{}}
-\newlabel{sub@fig:ROC-Simulation2}{{b}{8}{Simulation 2: ROC curves for $\rho _\mathrm {rw}^\mathrm {max}$, $r$ and $\rho ^\mathrm {max}$ statistics.\relax }{figure.caption.15}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Results for BBH and BNS signals injected in Gaussian noise polluted with sine-Gaussian glitches.\relax }}{8}{figure.caption.15}\protected@file@percent }
 \citation{roulet2019binary}
+\newlabel{fig:opt-snr-S2}{{6a}{9}{Simulation 2: Distribution of injected signals for $\rho _\mathrm {opt}$ - chirp distance $d_\mathrm {chirp}$ [Mpc] - CNN output\relax }{figure.caption.15}{}}
+\newlabel{sub@fig:opt-snr-S2}{{a}{9}{Simulation 2: Distribution of injected signals for $\rho _\mathrm {opt}$ - chirp distance $d_\mathrm {chirp}$ [Mpc] - CNN output\relax }{figure.caption.15}{}}
+\newlabel{fig:ROC-Simulation2}{{6b}{9}{Simulation 2: ROC curves for $\rho _\mathrm {rw}^\mathrm {max}$, $r$ and $\rho ^\mathrm {max}$ statistics.\relax }{figure.caption.15}{}}
+\newlabel{sub@fig:ROC-Simulation2}{{b}{9}{Simulation 2: ROC curves for $\rho _\mathrm {rw}^\mathrm {max}$, $r$ and $\rho ^\mathrm {max}$ statistics.\relax }{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Results for BBH and BNS signals injected in Gaussian noise polluted with sine-Gaussian glitches.\relax }}{9}{figure.caption.15}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {VII}Simulation 3}{9}{section*.16}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {VIII}Simulation 4}{9}{section*.18}\protected@file@percent }
+\newlabel{simulation-3}{{VII}{9}{}{section*.16}{}}
 \newlabel{fig:opt-snr-S3}{{7a}{9}{Simulation 3: Distribution of injected signals for $\rho _\mathrm {opt}$ - chirp distance $d_\mathrm {chirp}$ [Mpc] - CNN output\relax }{figure.caption.17}{}}
 \newlabel{sub@fig:opt-snr-S3}{{a}{9}{Simulation 3: Distribution of injected signals for $\rho _\mathrm {opt}$ - chirp distance $d_\mathrm {chirp}$ [Mpc] - CNN output\relax }{figure.caption.17}{}}
 \newlabel{fig:ROC-Simulation3}{{7b}{9}{Simulation 3: ROC curves for $\rho _\mathrm {rw}^\mathrm {max}$, $r$ and $\rho ^\mathrm {max}$ statistics.\relax }{figure.caption.17}{}}
@@ -119,117 +125,124 @@
 \citation{et_bluebook}
 \citation{cosmic_explorer_horizon}
 \citation{PhysRevD.106.104045}
+\citation{PhysRevD.106.104045}
 \citation{varma2014high}
 \citation{Pompili2023}
 \citation{Farr_2018,Farr_2017}
 \citation{Johnson_McDaniel_2022,Mapelli_2021}
 \citation{ramosbuades2023}
-\newlabel{fig:superimposed-axis}{{8a}{10}{BNS non-spinning ($1.4 - 1.4\,M_\odot $) superimposed signals. The TT-SNR MAP clearly encodes the presence of two signals that are closely separated in time and nearly identical in parameter space. An interference-like pattern emerges from the superposition of the signal representations produced by the template-based SNR time series, highlighting the TT-SNR MAP’s ability to capture overlapping events.\relax }{figure.caption.19}{}}
-\newlabel{sub@fig:superimposed-axis}{{a}{10}{BNS non-spinning ($1.4 - 1.4\,M_\odot $) superimposed signals. The TT-SNR MAP clearly encodes the presence of two signals that are closely separated in time and nearly identical in parameter space. An interference-like pattern emerges from the superposition of the signal representations produced by the template-based SNR time series, highlighting the TT-SNR MAP’s ability to capture overlapping events.\relax }{figure.caption.19}{}}
-\newlabel{fig:superimposed-zoom}{{8b}{10}{BNS non-spinning ($1.4 - 1.4\,M_\odot $) superimposed signals, zoomed view around the merging time.\relax }{figure.caption.19}{}}
-\newlabel{sub@fig:superimposed-zoom}{{b}{10}{BNS non-spinning ($1.4 - 1.4\,M_\odot $) superimposed signals, zoomed view around the merging time.\relax }{figure.caption.19}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces TT-SNR-map resulting from injected BNS non-spinning superimposed signals\relax }}{10}{figure.caption.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VIII}Simulation 4}{10}{section*.18}\protected@file@percent }
+\newlabel{simulation-4}{{VIII}{10}{}{section*.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces BNS spinning ($\chi _1^{z} = \chi _2^{z} = 0.5$; $1.4 - 1.4\,M_\odot $) signal. The TT-SNR MAP shows the presence of spin by this ``rounding`` angle effect in the lower-left of the butterfly structure.\relax }}{10}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:Extreme_spin}{{8}{10}{BNS spinning ($\chi _1^{z} = \chi _2^{z} = 0.5$; $1.4 - 1.4\,M_\odot $) signal. The TT-SNR MAP shows the presence of spin by this ``rounding`` angle effect in the lower-left of the butterfly structure.\relax }{figure.caption.19}{}}
 \citation{PhysRev.131.435,PhysRev.136.B1224}
+\newlabel{fig:superimposed-axis}{{9a}{11}{BNS non-spinning ($1.4 - 1.4\,M_\odot $) superimposed signals. The TT-SNR MAP clearly encodes the presence of two signals that are closely separated in time and nearly identical in parameter space. An interference-like pattern emerges from the superposition of the signal representations produced by the template-based SNR time series, highlighting the TT-SNR MAP's ability to capture overlapping events.\relax }{figure.caption.20}{}}
+\newlabel{sub@fig:superimposed-axis}{{a}{11}{BNS non-spinning ($1.4 - 1.4\,M_\odot $) superimposed signals. The TT-SNR MAP clearly encodes the presence of two signals that are closely separated in time and nearly identical in parameter space. An interference-like pattern emerges from the superposition of the signal representations produced by the template-based SNR time series, highlighting the TT-SNR MAP's ability to capture overlapping events.\relax }{figure.caption.20}{}}
+\newlabel{fig:superimposed-zoom}{{9b}{11}{BNS non-spinning ($1.4 - 1.4\,M_\odot $) superimposed signals, zoomed view around the merging time.\relax }{figure.caption.20}{}}
+\newlabel{sub@fig:superimposed-zoom}{{b}{11}{BNS non-spinning ($1.4 - 1.4\,M_\odot $) superimposed signals, zoomed view around the merging time.\relax }{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces TT-SNR-map resulting from injected BNS non-spinning superimposed signals\relax }}{11}{figure.caption.20}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Example of a NSBH ($1.4 - 25 M_\odot $) waveform including higher-order modes, injected with inclination $\iota = \frac  {\pi }{2}$. The TT-SNR MAP shows a clear modification of the central region, where the sharp rectangular features typically present in the standard representation are smoothed out by the contribution of higher-order modes. A similar structure is also visible at lower amplitudes, repeating regularly at later times.\relax }}{11}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:HM}{{10}{11}{Example of a NSBH ($1.4 - 25 M_\odot $) waveform including higher-order modes, injected with inclination $\iota = \frac {\pi }{2}$. The TT-SNR MAP shows a clear modification of the central region, where the sharp rectangular features typically present in the standard representation are smoothed out by the contribution of higher-order modes. A similar structure is also visible at lower amplitudes, repeating regularly at later times.\relax }{figure.caption.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces TT-SNR MAP of precessing NSBH system ($1.4 - 25M_\odot $) injected with inclination $\iota = \frac  {\pi }{2}$. The effect of spin-induced precession manifests as a modulation of the TT-SNR MAP structure, producing beam-like features radiating from the center of the map. These patterns reflect the time-dependent orbital-plane precession imprinted on the signal morphology.\relax }}{11}{figure.caption.22}\protected@file@percent }
+\newlabel{fig:Precessing}{{11}{11}{TT-SNR MAP of precessing NSBH system ($1.4 - 25M_\odot $) injected with inclination $\iota = \frac {\pi }{2}$. The effect of spin-induced precession manifests as a modulation of the TT-SNR MAP structure, producing beam-like features radiating from the center of the map. These patterns reflect the time-dependent orbital-plane precession imprinted on the signal morphology.\relax }{figure.caption.22}{}}
 \citation{Gamboa_2025}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Example of a BNS ($1.4 - 25 M_\odot $) waveform including higher-order modes, injected with inclination $\iota = \frac  {\pi }{2}$. The TT-SNR MAP shows a clear modification of the central region, where the sharp rectangular features typically present in the standard representation are smoothed out by the contribution of higher-order modes. A similar structure is also visible at lower amplitudes, repeating regularly at later times.\relax }}{11}{figure.caption.20}\protected@file@percent }
-\newlabel{fig:HM}{{9}{11}{Example of a BNS ($1.4 - 25 M_\odot $) waveform including higher-order modes, injected with inclination $\iota = \frac {\pi }{2}$. The TT-SNR MAP shows a clear modification of the central region, where the sharp rectangular features typically present in the standard representation are smoothed out by the contribution of higher-order modes. A similar structure is also visible at lower amplitudes, repeating regularly at later times.\relax }{figure.caption.20}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces TT-SNR MAP of precessing NSBH system ($1.4 - 25M_\odot $) injected with inclination $\iota = \frac  {\pi }{2}$. The effect of spin-induced precession manifests as a modulation of the TT-SNR MAP structure, producing beam-like features radiating from the center of the map. These patterns reflect the time-dependent orbital-plane precession imprinted on the signal morphology.\relax }}{11}{figure.caption.21}\protected@file@percent }
-\newlabel{fig:Precessing}{{10}{11}{TT-SNR MAP of precessing NSBH system ($1.4 - 25M_\odot $) injected with inclination $\iota = \frac {\pi }{2}$. The effect of spin-induced precession manifests as a modulation of the TT-SNR MAP structure, producing beam-like features radiating from the center of the map. These patterns reflect the time-dependent orbital-plane precession imprinted on the signal morphology.\relax }{figure.caption.21}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Representative example illustrating the effect of eccentricity in the TT-SNR MAP. Here it is shown a $1.4 - 6M_\odot $ non spinning system with $e = 0.3$, chosen outside the injection families for illustrative purposes. The imprint of eccentricity is clearly visible as a repeating structure beneath the main TT-SNR MAP pattern, appearing twice and introducing distinctive features associated with the non-circular orbital dynamics. \relax }}{11}{figure.caption.22}\protected@file@percent }
-\newlabel{fig:Eccentricity}{{11}{11}{Representative example illustrating the effect of eccentricity in the TT-SNR MAP. Here it is shown a $1.4 - 6M_\odot $ non spinning system with $e = 0.3$, chosen outside the injection families for illustrative purposes. The imprint of eccentricity is clearly visible as a repeating structure beneath the main TT-SNR MAP pattern, appearing twice and introducing distinctive features associated with the non-circular orbital dynamics. \relax }{figure.caption.22}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Results of the ROC curves for the 5 families injected signals campaign encoding physics not included in the template bank used to construct the TT-SNR Map. The signals are injected in Gaussian noise polluted with sine-Gaussian glitches.\relax }}{12}{figure.caption.23}\protected@file@percent }
-\newlabel{fig:S4}{{12}{12}{Results of the ROC curves for the 5 families injected signals campaign encoding physics not included in the template bank used to construct the TT-SNR Map. The signals are injected in Gaussian noise polluted with sine-Gaussian glitches.\relax }{figure.caption.23}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {IX}Conclusions}{12}{section*.25}\protected@file@percent }
-\newlabel{sec:Conclusion}{{IX}{12}{}{section*.25}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {}Acknowledgments}{12}{section*.26}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Results of the ROC curves for the 5 families injected signals campaign encoding physics not included in the template bank used to construct the TT-SNR Map. The signals are injected in Gaussian noise polluted with sine-Gaussian glitches.\relax }}{13}{figure.caption.24}\protected@file@percent }
-\newlabel{fig:RocScatter}{{13}{13}{Results of the ROC curves for the 5 families injected signals campaign encoding physics not included in the template bank used to construct the TT-SNR Map. The signals are injected in Gaussian noise polluted with sine-Gaussian glitches.\relax }{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Representative example illustrating the effect of eccentricity in the TT-SNR MAP. Here it is shown a $1.4 - 6M_\odot $ non spinning system with $e = 0.3$. The imprint of eccentricity is clearly visible as a repeating structure beneath the main TT-SNR MAP pattern, appearing twice and introducing distinctive features associated with the non-circular orbital dynamics. \relax }}{12}{figure.caption.23}\protected@file@percent }
+\newlabel{fig:Eccentricity}{{12}{12}{Representative example illustrating the effect of eccentricity in the TT-SNR MAP. Here it is shown a $1.4 - 6M_\odot $ non spinning system with $e = 0.3$. The imprint of eccentricity is clearly visible as a repeating structure beneath the main TT-SNR MAP pattern, appearing twice and introducing distinctive features associated with the non-circular orbital dynamics. \relax }{figure.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Results of the ROC curves for the Simulation-4 injection campaign encoding physics not included in the template bank used to construct the TT-SNR Map. The signals are injected in Gaussian noise polluted with sine-Gaussian glitches.\relax }}{12}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:S4}{{13}{12}{Results of the ROC curves for the Simulation-4 injection campaign encoding physics not included in the template bank used to construct the TT-SNR Map. The signals are injected in Gaussian noise polluted with sine-Gaussian glitches.\relax }{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Results for the for the five families of simulated signals, from left to right Precessing, Superimposed, HoM, Eccentricity and Extreme Spin. Top row: ROC curves, bottom row: $\rho _\mathrm  {opt}$-distance-CNN output score scatter plots. \relax }}{13}{figure.caption.25}\protected@file@percent }
+\newlabel{fig:RocScatter}{{14}{13}{Results for the for the five families of simulated signals, from left to right Precessing, Superimposed, HoM, Eccentricity and Extreme Spin. Top row: ROC curves, bottom row: $\rho _\mathrm {opt}$-distance-CNN output score scatter plots. \relax }{figure.caption.25}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IX}Conclusions}{13}{section*.26}\protected@file@percent }
+\newlabel{conclusions}{{IX}{13}{}{section*.26}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {}Acknowledgments}{14}{section*.27}\protected@file@percent }
 \@writefile{toc}{\appendix }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Correlation between the templates}{14}{section*.28}\protected@file@percent }
+\newlabel{appendix}{{A}{14}{}{section*.28}{}}
 \bibdata{ResNet_Article_reviewedNotes,references}
 \bibcite{gw150914}{{1}{2016{}}{{Abbott\ \emph  {et~al.}}}{{Abbott \emph  {et~al.}}}}
 \bibcite{gwtc1}{{2}{2019}{{Abbott\ \emph  {et~al.}}}{{Abbott \emph  {et~al.}}}}
-\bibcite{gwtc2}{{3}{2021{}}{{Abbott\ \emph  {et~al.}}}{{Abbott \emph  {et~al.}}}}
-\bibcite{gwtc2p1}{{4}{2021{}}{{Abbott\ \emph  {et~al.}}}{{Abbott \emph  {et~al.}}}}
-\bibcite{gwtc3}{{5}{2021{}}{{Abbott\ \emph  {et~al.}}}{{Abbott \emph  {et~al.}}}}
-\bibcite{gwtc4}{{6}{2025}{{{LIGO Scientific Collaboration the Virgo Collaboration and the KAGRA Collaboration}}}{{}}}
-\bibcite{gw170817}{{7}{2017}{{{LIGO Scientific Collaboration}\ and\ {Virgo Collaboration}}}{{}}}
-\bibcite{gw190521_discovery}{{8}{2020{}}{{{LIGO Scientific Collaboration}\ and\ {Virgo Collaboration}}}{{}}}
-\bibcite{gw190521_API}{{9}{2020{}}{{{LIGO Scientific Collaboration}\ and\ {Virgo Collaboration}}}{{}}}
-\bibcite{advligo2015}{{10}{2015}{{Aasi\ \emph  {et~al.}}}{{Aasi, Abbott, Abbott \emph  {et~al.}}}}
-\bibcite{advvirgo2015b}{{11}{2015}{{Acernese\ \emph  {et~al.}}}{{Acernese, Agathos, Agatsuma \emph  {et~al.}}}}
-\bibcite{kagra_science_2020}{{12}{2020}{{Akutsu\ \emph  {et~al.}}}{{Akutsu, Ando, Arai \emph  {et~al.}}}}
-\bibcite{ligoindia2023}{{13}{2023}{{{LIGO Laboratory}\ \emph  {et~al.}}}{{{LIGO Laboratory}, {Indian Department of Atomic Energy},\ and\ {Science and Technology}}}}
+\bibcite{gwtc2}{{3}{2021}{{Abbott\ \emph  {et~al.}}}{{Abbott \emph  {et~al.}}}}
+\bibcite{gwtc2p1}{{4}{2024}{{Abbott\ \emph  {et~al.}}}{{Abbott \emph  {et~al.}}}}
+\bibcite{gwtc3}{{5}{2023{}}{{Abbott\ \emph  {et~al.}}}{{Abbott \emph  {et~al.}}}}
+\bibcite{gwtc4}{{6}{2026{}}{{Abac\ \emph  {et~al.}}}{{Abac \emph  {et~al.}}}}
+\bibcite{gw170817}{{7}{2017}{{Abbott\ \emph  {et~al.}}}{{Abbott \emph  {et~al.}}}}
+\bibcite{gw190521_discovery}{{8}{2020{}}{{Abbott\ \emph  {et~al.}}}{{Abbott \emph  {et~al.}}}}
+\bibcite{gw190521_API}{{9}{2020{}}{{Abbott\ \emph  {et~al.}}}{{Abbott \emph  {et~al.}}}}
+\bibcite{advligo2015}{{10}{2015}{{Aasi\ \emph  {et~al.}}}{{Aasi \emph  {et~al.}}}}
+\bibcite{advvirgo2015b}{{11}{2015}{{Acernese\ \emph  {et~al.}}}{{Acernese \emph  {et~al.}}}}
+\newlabel{fig:Q-below}{{15a}{15}{Spectrogram of systems with $M_\mathrm {c}^1 = 0.95\,M_{\odot }$ merging time at $t_1 = 38\,\mathrm {s}$ (red line), $M_\mathrm {c}^\mathrm {ref}$ merging time at $t_\mathrm {ref} = 40\,\mathrm {s}$ (green line), and $M_\mathrm {c}^1 = 0.95\,M_{\odot }$ merging time at $t_2 = 42\,\mathrm {s}$ (blue line).\relax }{figure.caption.29}{}}
+\newlabel{sub@fig:Q-below}{{a}{15}{Spectrogram of systems with $M_\mathrm {c}^1 = 0.95\,M_{\odot }$ merging time at $t_1 = 38\,\mathrm {s}$ (red line), $M_\mathrm {c}^\mathrm {ref}$ merging time at $t_\mathrm {ref} = 40\,\mathrm {s}$ (green line), and $M_\mathrm {c}^1 = 0.95\,M_{\odot }$ merging time at $t_2 = 42\,\mathrm {s}$ (blue line).\relax }{figure.caption.29}{}}
+\newlabel{fig:Q-above}{{15b}{15}{Spectrogram of systems with $M_\mathrm {c}^2 = 4.35\,M_{\odot }$ merging time at $t_1 = 38\,\mathrm {s}$ (red line), $M_\mathrm {c}^\mathrm {ref}$ time at $t_0 = 40\,\mathrm {s}$ (green line), and $M_\mathrm {c}^2 = 4.35\,M_{\odot }$ merging time at $t_2 = 42\,\mathrm {s}$ (blue line).\relax }{figure.caption.29}{}}
+\newlabel{sub@fig:Q-above}{{b}{15}{Spectrogram of systems with $M_\mathrm {c}^2 = 4.35\,M_{\odot }$ merging time at $t_1 = 38\,\mathrm {s}$ (red line), $M_\mathrm {c}^\mathrm {ref}$ time at $t_0 = 40\,\mathrm {s}$ (green line), and $M_\mathrm {c}^2 = 4.35\,M_{\odot }$ merging time at $t_2 = 42\,\mathrm {s}$ (blue line).\relax }{figure.caption.29}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {}References}{15}{section*.30}\protected@file@percent }
+\bibcite{kagra_science_2020}{{12}{2021}{{Akutsu\ \emph  {et~al.}}}{{Akutsu \emph  {et~al.}}}}
+\bibcite{ligoindia2023}{{13}{2023}{{{LIGO Laboratory}}}{{}}}
 \bibcite{nasa_lisa}{{14}{2025}{{{ESA}\ and\ {NASA LISA Mission Office}}}{{}}}
-\bibcite{lpf_overview}{{15}{2019}{{Armano\ \emph  {et~al.}}}{{Armano, Audley, Baird \emph  {et~al.}}}}
-\bibcite{et_bluebook}{{16}{2025}{{Abac\ \emph  {et~al.}}}{{Abac, Abramo, Albanesi \emph  {et~al.}}}}
-\bibcite{cosmic_explorer_horizon}{{17}{2021}{{Evans\ \emph  {et~al.}}}{{Evans, Adhikari, Afle \emph  {et~al.}}}}
+\bibcite{lpf_overview}{{15}{2019}{{Armano\ \emph  {et~al.}}}{{Armano \emph  {et~al.}}}}
+\bibcite{et_bluebook}{{16}{2025{}}{{Abac\ \emph  {et~al.}}}{{Abac \emph  {et~al.}}}}
+\bibcite{cosmic_explorer_horizon}{{17}{2021}{{Evans\ \emph  {et~al.}}}{{Evans \emph  {et~al.}}}}
 \bibcite{gstlal1}{{18}{2017{}}{{Messick\ \emph  {et~al.}}}{{Messick \emph  {et~al.}}}}
 \bibcite{gstlal2}{{19}{2019}{{Sachdev\ \emph  {et~al.}}}{{Sachdev \emph  {et~al.}}}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Correlation between the templates}{14}{section*.27}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {}References}{14}{section*.29}\protected@file@percent }
-\newlabel{fig:Q-below}{{14a}{14}{Spectrogram of systems with $M_\mathrm {c}^1 = 0.95\,M_{\odot }$ merging time at $t_1 = 38\,\mathrm {s}$ (red line), $M_\mathrm {c}^\mathrm {ref}$ time at $t_0 = 40\,\mathrm {s}$ (green line), and $M_\mathrm {c}^1 = 0.95\,M_{\odot }$ merging time at $t_2 = 42\,\mathrm {s}$ (blue line).\relax }{figure.caption.28}{}}
-\newlabel{sub@fig:Q-below}{{a}{14}{Spectrogram of systems with $M_\mathrm {c}^1 = 0.95\,M_{\odot }$ merging time at $t_1 = 38\,\mathrm {s}$ (red line), $M_\mathrm {c}^\mathrm {ref}$ time at $t_0 = 40\,\mathrm {s}$ (green line), and $M_\mathrm {c}^1 = 0.95\,M_{\odot }$ merging time at $t_2 = 42\,\mathrm {s}$ (blue line).\relax }{figure.caption.28}{}}
-\newlabel{fig:Q-above}{{14b}{14}{Spectrogram of systems with $M_\mathrm {c}^2 = 4.35\,M_{\odot }$ merging time at $t_1 = 38\,\mathrm {s}$ (red line), $M_\mathrm {c}^\mathrm {ref}$ time at $t_0 = 40\,\mathrm {s}$ (green line), and $M_\mathrm {c}^2 = 4.35\,M_{\odot }$ merging time at $t_2 = 42\,\mathrm {s}$ (blue line).\relax }{figure.caption.28}{}}
-\newlabel{sub@fig:Q-above}{{b}{14}{Spectrogram of systems with $M_\mathrm {c}^2 = 4.35\,M_{\odot }$ merging time at $t_1 = 38\,\mathrm {s}$ (red line), $M_\mathrm {c}^\mathrm {ref}$ time at $t_0 = 40\,\mathrm {s}$ (green line), and $M_\mathrm {c}^2 = 4.35\,M_{\odot }$ merging time at $t_2 = 42\,\mathrm {s}$ (blue line).\relax }{figure.caption.28}{}}
-\newlabel{fig:Q}{{\caption@xref {fig:Q}{ on input line 584}}{14}{}{figure.caption.28}{}}
-\bibcite{gstlal3}{{20}{2024}{{Ewing}}{{}}}
+\bibcite{gstlal3}{{20}{2024}{{Ewing\ \emph  {et~al.}}}{{Ewing \emph  {et~al.}}}}
 \bibcite{gstlal4}{{21}{2023}{{Tsukada\ \emph  {et~al.}}}{{Tsukada \emph  {et~al.}}}}
-\bibcite{pycbc2021}{{22}{2021}{{Dal~Canton\ \emph  {et~al.}}}{{Dal~Canton \emph  {et~al.}}}}
-\bibcite{mbta_o4_2025}{{23}{2025}{{All{\'e}n{\'e}\ \emph  {et~al.}}}{{All{\'e}n{\'e}, Aubin, Bentara \emph  {et~al.}}}}
+\bibcite{pycbc2021}{{22}{2021}{{Dal~Canton\ \emph  {et~al.}}}{{Dal~Canton, Nitz, Gadre \emph  {et~al.}}}}
+\bibcite{mbta_o4_2025}{{23}{2025}{{All{\'e}n{\'e}\ \emph  {et~al.}}}{{All{\'e}n{\'e} \emph  {et~al.}}}}
 \bibcite{spiir2}{{24}{2012}{{Hooper\ \emph  {et~al.}}}{{Hooper \emph  {et~al.}}}}
 \bibcite{cwb1}{{25}{2016}{{Klimenko\ \emph  {et~al.}}}{{Klimenko, Vedovato, Drago, Salemi, Tiwari, Prodi, Lazzaro, Ackley, Tiwari, Da~Silva,\ and\ Mitselmakher}}}
 \bibcite{cwb2}{{26}{2005}{{Klimenko\ \emph  {et~al.}}}{{Klimenko, Mohanty, Rakhmanov,\ and\ Mitselmakher}}}
-\bibcite{ml_pipeline2024}{{27}{2024}{{Marx\ \emph  {et~al.}}}{{Marx, Benoit, Gunny \emph  {et~al.}}}}
-\bibcite{deepresnet2022}{{28}{2022}{{Nousi\ \emph  {et~al.}}}{{Nousi, Koloniari, Passalis \emph  {et~al.}}}}
+\bibcite{ml_pipeline2024}{{27}{2025}{{Marx\ \emph  {et~al.}}}{{Marx, Benoit, Gunny, Omer, Chatterjee, Venterea, Wills, Saleem, Moreno, Raikman, Govorkova, Desai, Krupa, Rankin, Coughlin, Harris,\ and\ Katsavounidis}}}
+\bibcite{deepresnet2022}{{28}{2023}{{Nousi\ \emph  {et~al.}}}{{Nousi, Koloniari, Passalis, Iosif, Stergioulas,\ and\ Tefas}}}
 \bibcite{cnn_unmodelled2024}{{29}{2024}{{Skliris\ \emph  {et~al.}}}{{Skliris, Norman,\ and\ Sutton}}}
-\bibcite{mlgwsc1_mock}{{30}{2022}{{Sch{\"a}fer\ \emph  {et~al.}}}{{Sch{\"a}fer, Zelenka, Nitz \emph  {et~al.}}}}
-\bibcite{bns_dl_pipeline2024}{{31}{2025}{{McLeod\ \emph  {et~al.}}}{{McLeod, Beveridge, Wen \emph  {et~al.}}}}
-\bibcite{arXiv:2512.12399}{{32}{2025}{{Yamamoto\ \emph  {et~al.}}}{{Yamamoto, Cannon, Motohashi,\ and\ Tahara}}}
-\bibcite{matched_filtering}{{33}{1968}{{Helstrom}}{{}}}
-\bibcite{harry2014}{{34}{2014}{{Harry\ \emph  {et~al.}}}{{Harry, Nitz, Brown \emph  {et~al.}}}}
-\bibcite{bnsspins2012}{{35}{2012}{{Brown\ \emph  {et~al.}}}{{Brown, Harry, Lundgren,\ and\ Nitz}}}
-\bibcite{template_banks_2019}{{36}{2019}{{Roy\ \emph  {et~al.}}}{{Roy, Sengupta,\ and\ Ajith}}}
-\bibcite{stochastic_bank_2024}{{37}{2024}{{Kacanja\ \emph  {et~al.}}}{{Kacanja, Nitz, Wu \emph  {et~al.}}}}
-\bibcite{BabakGlitchSearches}{{38}{2013}{{Babak\ \emph  {et~al.}}}{{Babak \emph  {et~al.}}}}
-\bibcite{allen2005_chi2}{{39}{2005}{{Allen}}{{}}}
-\bibcite{Abbott_2016}{{40}{2016{}}{{Abbott\ \emph  {et~al.}}}{{Abbott \emph  {et~al.}}}}
-\bibcite{pycbc2016}{{41}{2016}{{Usman\ \emph  {et~al.}}}{{Usman, Nitz, Harry \emph  {et~al.}}}}
-\bibcite{Messick_2017}{{42}{2017{}}{{Messick\ \emph  {et~al.}}}{{Messick, Blackburn, Brady, Brockill, Cannon, Cariou, Caudill, Chamberlin, Creighton, Everett, Hanna, Keppel, Lang, Li, Meacher, Nielsen, Pankow, Privitera, Qi, Sachdev, Sadeghian, Singer, Thomas, Wade, Wade, Weinstein,\ and\ Wiesner}}}
-\bibcite{Hanna2008Thesis}{{43}{2008}{{Hanna}}{{}}}
-\bibcite{Dhurandhar_2017}{{44}{2017}{{Dhurandhar\ \emph  {et~al.}}}{{Dhurandhar, Gupta, Gadre,\ and\ Bose}}}
-\bibcite{gwtc4methods}{{45}{2025}{{{The LIGO Scientific Collaboration}\ \emph  {et~al.}}}{{{The LIGO Scientific Collaboration}, {the Virgo Collaboration},\ and\ {the KAGRA Collaboration}}}}
-\bibcite{gwtc4intro}{{46}{2025}{{{Abac}\ \emph  {et~al.}}}{{{Abac}, {Abouelfettouh}, {Acernese}, {Ackley}, {Adhicary}, {Adhikari} \emph  {et~al.}}}}
-\bibcite{oshea2015_cnn_intro}{{47}{2015}{{O'Shea\ and\ Nash}}{{}}}
-\bibcite{owen1996_templates}{{48}{1996}{{Owen}}{{}}}
-\bibcite{Shoemaker2009}{{49}{2009}{{Shoemaker}}{{}}}
-\bibcite{seobnrv4}{{50}{2020}{{Ossokine\ \emph  {et~al.}}}{{Ossokine, Buonanno, Marsat, Cotesta, Nagar \emph  {et~al.}}}}
-\bibcite{seobnrv4rom}{{51}{2016}{{P{\"u}rrer}}{{}}}
-\bibcite{pycbc-software}{{52}{2024}{{Nitz\ \emph  {et~al.}}}{{Nitz \emph  {et~al.}}}}
-\bibcite{rosenblatt1958}{{53}{1958}{{Rosenblatt}}{{}}}
-\bibcite{rumelhart1986_backprop}{{54}{1986}{{Rumelhart\ \emph  {et~al.}}}{{Rumelhart, Hinton,\ and\ Williams}}}
-\bibcite{LeCun2015}{{55}{2015}{{LeCun\ \emph  {et~al.}}}{{LeCun, Bengio,\ and\ Hinton}}}
-\bibcite{he2015resnet}{{56}{2015}{{He\ \emph  {et~al.}}}{{He, Zhang, Ren,\ and\ Sun}}}
-\bibcite{bn}{{57}{2015}{{Ioffe\ and\ Szegedy}}{{}}}
-\bibcite{krizhevsky2012imagenet}{{58}{2012}{{Krizhevsky\ \emph  {et~al.}}}{{Krizhevsky, Sutskever,\ and\ Hinton}}}
-\bibcite{lin2014network}{{59}{2014}{{Lin\ \emph  {et~al.}}}{{Lin, Chen,\ and\ Yan}}}
-\bibcite{softmax}{{60}{2006}{{Bishop}}{{}}}
-\bibcite{Adam}{{61}{2014}{{Kingma\ and\ Ba}}{{}}}
-\bibcite{population_gwtc3}{{62}{2021}{{{LIGO Scientific Collaboration}\ and\ {Virgo Collaboration}}}{{}}}
+\bibcite{mlgwsc1_mock}{{30}{2023}{{Sch{\"a}fer\ \emph  {et~al.}}}{{Sch{\"a}fer, Zelenka, Nitz, Wang, Wu, Guo, Cao, Ren, Nousi, Stergioulas, Iosif, Koloniari, Tefas, Passalis, Salemi, Vedovato, Klimenko, Mishra, Br{\"u}gmann, Cuoco, Huerta, Messenger,\ and\ Ohme}}}
+\bibcite{bns_dl_pipeline2024}{{31}{2025}{{McLeod\ \emph  {et~al.}}}{{McLeod, Beveridge, Wen,\ and\ Wicenec}}}
+\bibcite{3yph-35r4}{{32}{2026}{{Beveridge\ \emph  {et~al.}}}{{Beveridge, McLeod, Wen, Guo,\ and\ Wicenec}}}
+\bibcite{arXiv:2512.12399}{{33}{2026}{{Yamamoto\ \emph  {et~al.}}}{{Yamamoto, Cannon, Motohashi,\ and\ Tahara}}}
+\bibcite{matched_filtering}{{34}{1968}{{Helstrom}}{{}}}
+\bibcite{harry2014}{{35}{2014}{{Harry\ \emph  {et~al.}}}{{Harry, Nitz, Brown, Lundgren, Ochsner,\ and\ Keppel}}}
+\bibcite{bnsspins2012}{{36}{2012}{{Brown\ \emph  {et~al.}}}{{Brown, Harry, Lundgren,\ and\ Nitz}}}
+\bibcite{template_banks_2019}{{37}{2019}{{Roy\ \emph  {et~al.}}}{{Roy, Sengupta,\ and\ Ajith}}}
+\bibcite{stochastic_bank_2024}{{38}{2024}{{Kacanja\ \emph  {et~al.}}}{{Kacanja, Nitz, Wu, Cusinato, Dhurkunde, Harry, Dal~Canton,\ and\ Pannarale}}}
+\bibcite{BabakGlitchSearches}{{39}{2013}{{Babak\ \emph  {et~al.}}}{{Babak \emph  {et~al.}}}}
+\bibcite{allen2005_chi2}{{40}{2005}{{Allen}}{{}}}
+\bibcite{Abbott_2016}{{41}{2016{}}{{Abbott\ \emph  {et~al.}}}{{Abbott \emph  {et~al.}}}}
+\bibcite{pycbc2016}{{42}{2016}{{Usman\ \emph  {et~al.}}}{{Usman \emph  {et~al.}}}}
+\bibcite{Messick_2017}{{43}{2017{}}{{Messick\ \emph  {et~al.}}}{{Messick, Blackburn, Brady \emph  {et~al.}}}}
+\bibcite{Hanna2008Thesis}{{44}{2008}{{Hanna}}{{}}}
+\bibcite{Dhurandhar_2017}{{45}{2017}{{Dhurandhar\ \emph  {et~al.}}}{{Dhurandhar, Gupta, Gadre,\ and\ Bose}}}
+\bibcite{gwtc4methods}{{46}{2026{}}{{Abac\ \emph  {et~al.}}}{{Abac \emph  {et~al.}}}}
+\bibcite{gwtc4intro}{{47}{2025{}}{{Abac\ \emph  {et~al.}}}{{Abac \emph  {et~al.}}}}
+\bibcite{oshea2015_cnn_intro}{{48}{2015}{{O'Shea\ and\ Nash}}{{}}}
+\bibcite{owen1996_templates}{{49}{1996}{{Owen}}{{}}}
+\bibcite{Shoemaker2009}{{50}{2009}{{Shoemaker}}{{}}}
+\bibcite{seobnrv4}{{51}{2020}{{Ossokine\ \emph  {et~al.}}}{{Ossokine, Buonanno, Marsat, Cotesta, Babak, Dietrich, Haas, Hinder, Pfeiffer, P{\"u}rrer, Woodford, Boyle, Kidder, Scheel,\ and\ Szil{\'a}gyi}}}
+\bibcite{seobnrv4rom}{{52}{2016}{{P{\"u}rrer}}{{}}}
+\bibcite{pycbc-software}{{53}{2024}{{Nitz\ \emph  {et~al.}}}{{Nitz \emph  {et~al.}}}}
+\bibcite{rosenblatt1958}{{54}{1958}{{Rosenblatt}}{{}}}
+\bibcite{rumelhart1986_backprop}{{55}{1986}{{Rumelhart\ \emph  {et~al.}}}{{Rumelhart, Hinton,\ and\ Williams}}}
+\bibcite{LeCun2015}{{56}{2015}{{LeCun\ \emph  {et~al.}}}{{LeCun, Bengio,\ and\ Hinton}}}
+\bibcite{he2015resnet}{{57}{2016}{{He\ \emph  {et~al.}}}{{He, Zhang, Ren,\ and\ Sun}}}
+\bibcite{bn}{{58}{2015}{{Ioffe\ and\ Szegedy}}{{}}}
+\bibcite{krizhevsky2012imagenet}{{59}{2012}{{Krizhevsky\ \emph  {et~al.}}}{{Krizhevsky, Sutskever,\ and\ Hinton}}}
+\bibcite{lin2014network}{{60}{2014}{{Lin\ \emph  {et~al.}}}{{Lin, Chen,\ and\ Yan}}}
+\bibcite{Adam}{{61}{2015}{{Kingma\ and\ Ba}}{{}}}
+\bibcite{population_gwtc3}{{62}{2023{}}{{Abbott\ \emph  {et~al.}}}{{Abbott \emph  {et~al.}}}}
 \bibcite{allen2012findchirp}{{63}{2012}{{Allen\ \emph  {et~al.}}}{{Allen, Anderson, Brady, Brown,\ and\ Creighton}}}
 \bibcite{glitches_sine_gaussian_2014}{{64}{2014}{{Dal~Canton\ \emph  {et~al.}}}{{Dal~Canton, Bhagwat, Dhurandhar,\ and\ Lundgren}}}
 \bibcite{roulet2019binary}{{65}{2019}{{Roulet\ and\ Zaldarriaga}}{{}}}
 \bibcite{PhysRevD.106.104045}{{66}{2022}{{Relton\ \emph  {et~al.}}}{{Relton, Virtuoso, Bini, Raymond, Harry, Drago, Lazzaro, Miani,\ and\ Tiwari}}}
 \bibcite{varma2014high}{{67}{2017}{{Varma\ and\ Ajith}}{{}}}
-\bibcite{Pompili2023}{{68}{2023}{{Pompili\ \emph  {et~al.}}}{{Pompili, Buonanno, Estellés, Khalil, van~de Meent, Mihaylov, Ossokine, Pürrer, Ramos-Buades, Mehta, Cotesta, Marsat, Boyle, Kidder, Pfeiffer, Scheel, Rüter, Vu, Dudi, Ma, Mitman, Melchor, Thomas,\ and\ Sanchez}}}
+\bibcite{Pompili2023}{{68}{2023}{{Pompili\ \emph  {et~al.}}}{{Pompili, Buonanno, Estell{\'e}s, Khalil, van~de Meent, Mihaylov, Ossokine, P{\"u}rrer, Ramos-Buades, Mehta, Cotesta, Marsat, Boyle, Kidder, Pfeiffer, Scheel, R{\"u}ter, Vu, Dudi, Ma, Mitman, Melchor, Thomas,\ and\ Sanchez}}}
 \bibcite{Farr_2018}{{69}{2018}{{Farr\ \emph  {et~al.}}}{{Farr, Holz,\ and\ Farr}}}
 \bibcite{Farr_2017}{{70}{2017}{{Farr\ \emph  {et~al.}}}{{Farr, Stevenson, Miller, Mandel, Farr,\ and\ Vecchio}}}
 \bibcite{Johnson_McDaniel_2022}{{71}{2022}{{Johnson-McDaniel\ \emph  {et~al.}}}{{Johnson-McDaniel, Kulkarni,\ and\ Gupta}}}
 \bibcite{Mapelli_2021}{{72}{2021}{{Mapelli}}{{}}}
-\bibcite{ramosbuades2023}{{73}{2023}{{Ramos-Buades\ \emph  {et~al.}}}{{Ramos-Buades, Buonanno, Estellés, Khalil, Mihaylov, Ossokine, Pompili,\ and\ Shiferaw}}}
+\bibcite{ramosbuades2023}{{73}{2023}{{Ramos-Buades\ \emph  {et~al.}}}{{Ramos-Buades, Buonanno, Estell{\'e}s, Khalil, Mihaylov, Ossokine, Pompili,\ and\ Shiferaw}}}
 \bibcite{PhysRev.131.435}{{74}{1963}{{Peters\ and\ Mathews}}{{}}}
 \bibcite{PhysRev.136.B1224}{{75}{1964}{{Peters}}{{}}}
-\bibcite{Gamboa_2025}{{76}{2025}{{Gamboa\ \emph  {et~al.}}}{{Gamboa, Buonanno, Enficiaud, Khalil, Ramos-Buades, Pompili, Estellés, Boyle, Kidder, Pfeiffer, Rüter,\ and\ Scheel}}}
+\bibcite{Gamboa_2025}{{76}{2025}{{Gamboa\ \emph  {et~al.}}}{{Gamboa, Buonanno, Enficiaud, Khalil, Ramos-Buades, Pompili, Estell{\'e}s, Boyle, Kidder, Pfeiffer, R{\"u}ter,\ and\ Scheel}}}
 \bibstyle{apsrev4-2}
-\newlabel{LastBibItem}{{76}{16}{}{section*.29}{}}
-\newlabel{LastPage}{{}{16}{}{}{}}
-\gdef \@abspage@last{16}
+\citation{REVTEX42Control}
+\citation{apsrev41Control}
+\newlabel{LastBibItem}{{76}{18}{}{section*.30}{}}
+\newlabel{LastPage}{{}{18}{}{}{}}
+\gdef \@abspage@last{18}

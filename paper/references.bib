@@ -1,0 +1,1182 @@
+% =====================================================================
+%  references.bib  --  PRD / REVTeX 4.2 (apsrev4-2) style
+%
+%  IMPORTANT: to make titles appear in the printed bibliography, compile
+%  with the "longbibliography" class option:
+%
+%     \documentclass[aps,prd,twocolumn,superscriptaddress,%
+%                    longbibliography]{revtex4-2}
+%     ...
+%     \bibliographystyle{apsrev4-2}
+%     \bibliography{references}
+%
+%  Without that option apsrev4-2 SUPPRESSES the title field even though
+%  every entry below has one.  This is the cause of referee Major
+%  Comment 6 ("most references are missing their titles").
+%
+%  All entries verified against the published record (August 2026).
+%  Entries flagged [CHECK] could not be fully verified -- please confirm.
+%  Duplicate keys are retained so that existing \cite commands still
+%  compile; see the notes marked [DUPLICATE].
+% =====================================================================
+
+
+% ---------------------------------------------------------------------
+%  Detections and catalogs
+% ---------------------------------------------------------------------
+
+% NOTE: the previous version of this entry mixed the title of the PRL
+% discovery paper (PRL 116, 061102, arXiv:1602.03837) with the journal
+% and eprint of the PRD search paper (PRD 93, 122003, arXiv:1602.03839).
+% It is now the PRL discovery paper.  [DUPLICATE] the PRD search paper
+% is the key "Abbott_2016" below -- check which one you actually cite.
+@article{gw150914,
+  author        = {Abbott, B. P. and others},
+  collaboration = {LIGO Scientific Collaboration and Virgo Collaboration},
+  title         = {Observation of Gravitational Waves from a Binary Black Hole Merger},
+  journal       = {Phys. Rev. Lett.},
+  volume        = {116},
+  number        = {6},
+  pages         = {061102},
+  year          = {2016},
+  doi           = {10.1103/PhysRevLett.116.061102},
+  eprint        = {1602.03837},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% [DUPLICATE] same paper as "gw150914" in the previous version of this file.
+@article{Abbott_2016,
+  author        = {Abbott, B. P. and others},
+  collaboration = {LIGO Scientific Collaboration and Virgo Collaboration},
+  title         = {{GW150914}: First results from the search for binary black hole coalescence with {Advanced LIGO}},
+  journal       = {Phys. Rev. D},
+  volume        = {93},
+  number        = {12},
+  pages         = {122003},
+  year          = {2016},
+  doi           = {10.1103/PhysRevD.93.122003},
+  eprint        = {1602.03839},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@article{gw170817,
+  author        = {Abbott, B. P. and others},
+  collaboration = {LIGO Scientific Collaboration and Virgo Collaboration},
+  title         = {{GW170817}: Observation of Gravitational Waves from a Binary Neutron Star Inspiral},
+  journal       = {Phys. Rev. Lett.},
+  volume        = {119},
+  number        = {16},
+  pages         = {161101},
+  year          = {2017},
+  doi           = {10.1103/PhysRevLett.119.161101},
+  eprint        = {1710.05832},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@article{gw190521_discovery,
+  author        = {Abbott, R. and others},
+  collaboration = {LIGO Scientific Collaboration and Virgo Collaboration},
+  title         = {{GW190521}: A Binary Black Hole Merger with a Total Mass of $150\,M_\odot$},
+  journal       = {Phys. Rev. Lett.},
+  volume        = {125},
+  number        = {10},
+  pages         = {101102},
+  year          = {2020},
+  doi           = {10.1103/PhysRevLett.125.101102},
+  eprint        = {2009.01075},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@article{gw190521_API,
+  author        = {Abbott, R. and others},
+  collaboration = {LIGO Scientific Collaboration and Virgo Collaboration},
+  title         = {Properties and Astrophysical Implications of the $150\,M_\odot$ Binary Black Hole Merger {GW190521}},
+  journal       = {Astrophys. J. Lett.},
+  volume        = {900},
+  number        = {1},
+  pages         = {L13},
+  year          = {2020},
+  doi           = {10.3847/2041-8213/aba493},
+  eprint        = {2009.01190},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.HE}
+}
+
+@article{gwtc1,
+  author        = {Abbott, B. P. and others},
+  collaboration = {LIGO Scientific Collaboration and Virgo Collaboration},
+  title         = {{GWTC-1}: A Gravitational-Wave Transient Catalog of Compact Binary Mergers Observed by {LIGO} and {Virgo} during the First and Second Observing Runs},
+  journal       = {Phys. Rev. X},
+  volume        = {9},
+  number        = {3},
+  pages         = {031040},
+  year          = {2019},
+  doi           = {10.1103/PhysRevX.9.031040},
+  eprint        = {1811.12907},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@article{gwtc2,
+  author        = {Abbott, R. and others},
+  collaboration = {LIGO Scientific Collaboration and Virgo Collaboration},
+  title         = {{GWTC-2}: Compact Binary Coalescences Observed by {LIGO} and {Virgo} during the First Half of the Third Observing Run},
+  journal       = {Phys. Rev. X},
+  volume        = {11},
+  number        = {2},
+  pages         = {021053},
+  year          = {2021},
+  doi           = {10.1103/PhysRevX.11.021053},
+  eprint        = {2010.14527},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% Published: was arXiv-only in the previous version.
+@article{gwtc2p1,
+  author        = {Abbott, R. and others},
+  collaboration = {LIGO Scientific Collaboration and Virgo Collaboration},
+  title         = {{GWTC-2.1}: Deep extended catalog of compact binary coalescences observed by {LIGO} and {Virgo} during the first half of the third observing run},
+  journal       = {Phys. Rev. D},
+  volume        = {109},
+  number        = {2},
+  pages         = {022001},
+  year          = {2024},
+  doi           = {10.1103/PhysRevD.109.022001},
+  eprint        = {2108.01045},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% Published: was arXiv-only in the previous version.
+@article{gwtc3,
+  author        = {Abbott, R. and others},
+  collaboration = {LIGO Scientific Collaboration and Virgo Collaboration and KAGRA Collaboration},
+  title         = {{GWTC-3}: Compact Binary Coalescences Observed by {LIGO} and {Virgo} during the Second Part of the Third Observing Run},
+  journal       = {Phys. Rev. X},
+  volume        = {13},
+  number        = {4},
+  pages         = {041039},
+  year          = {2023},
+  doi           = {10.1103/PhysRevX.13.041039},
+  eprint        = {2111.03606},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% Published: was arXiv-only in the previous version.
+@article{gwtc4,
+  author        = {Abac, A. G. and others},
+  collaboration = {LIGO Scientific Collaboration and Virgo Collaboration and KAGRA Collaboration},
+  title         = {{GWTC-4.0}: Updating the Gravitational-wave Transient Catalog with Observations from the First Part of the Fourth {LIGO--Virgo--KAGRA} Observing Run},
+  journal       = {Astrophys. J. Lett.},
+  volume        = {1004},
+  number        = {2},
+  pages         = {L22},
+  year          = {2026},
+  doi           = {10.3847/2041-8213/ae2c74},
+  eprint        = {2508.18082},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% Published: was arXiv-only in the previous version.
+@article{gwtc4intro,
+  author        = {Abac, A. G. and others},
+  collaboration = {LIGO Scientific Collaboration and Virgo Collaboration and KAGRA Collaboration},
+  title         = {{GWTC-4.0}: An Introduction to Version 4.0 of the Gravitational-Wave Transient Catalog},
+  journal       = {Astrophys. J. Lett.},
+  volume        = {995},
+  number        = {1},
+  pages         = {L18},
+  year          = {2025},
+  doi           = {10.3847/2041-8213/ae0c06},
+  eprint        = {2508.18080},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% Published: was arXiv-only in the previous version.
+@article{gwtc4methods,
+  author        = {Abac, A. G. and others},
+  collaboration = {LIGO Scientific Collaboration and Virgo Collaboration and KAGRA Collaboration},
+  title         = {{GWTC-4.0}: Methods for Identifying and Characterizing Gravitational-wave Transients},
+  journal       = {Astrophys. J. Lett.},
+  volume        = {1004},
+  number        = {2},
+  pages         = {L21},
+  year          = {2026},
+  doi           = {10.3847/2041-8213/ae447b},
+  eprint        = {2508.18081},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% Year corrected: 2021 -> 2023 (PRX 13, 011048 appeared in 2023).
+@article{population_gwtc3,
+  author        = {Abbott, R. and others},
+  collaboration = {LIGO Scientific Collaboration and Virgo Collaboration and KAGRA Collaboration},
+  title         = {Population of Merging Compact Binaries Inferred Using Gravitational Waves through {GWTC-3}},
+  journal       = {Phys. Rev. X},
+  volume        = {13},
+  number        = {1},
+  pages         = {011048},
+  year          = {2023},
+  doi           = {10.1103/PhysRevX.13.011048},
+  eprint        = {2111.03634},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.HE}
+}
+
+
+% ---------------------------------------------------------------------
+%  Detectors
+% ---------------------------------------------------------------------
+
+@article{advligo2015,
+  author        = {Aasi, J. and others},
+  collaboration = {LIGO Scientific Collaboration},
+  title         = {Advanced {LIGO}},
+  journal       = {Class. Quantum Grav.},
+  volume        = {32},
+  number        = {7},
+  pages         = {074001},
+  year          = {2015},
+  doi           = {10.1088/0264-9381/32/7/074001},
+  eprint        = {1411.4547},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@article{advvirgo2015b,
+  author        = {Acernese, F. and others},
+  collaboration = {Virgo Collaboration},
+  title         = {Advanced {Virgo}: a second-generation interferometric gravitational wave detector},
+  journal       = {Class. Quantum Grav.},
+  volume        = {32},
+  number        = {2},
+  pages         = {024001},
+  year          = {2015},
+  doi           = {10.1088/0264-9381/32/2/024001},
+  eprint        = {1408.3978},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% DOI corrected: the previous entry carried the arXiv DOI, not the journal DOI.
+@article{kagra_science_2020,
+  author        = {Akutsu, T. and others},
+  collaboration = {KAGRA Collaboration},
+  title         = {Overview of {KAGRA}: {KAGRA} science},
+  journal       = {Prog. Theor. Exp. Phys.},
+  volume        = {2021},
+  number        = {5},
+  pages         = {05A103},
+  year          = {2021},
+  doi           = {10.1093/ptep/ptaa120},
+  eprint        = {2008.02921},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@misc{ligoindia2023,
+  author       = {{LIGO Laboratory}},
+  title        = {{LIGO-India}: A Planned Joint {India--US} Detector},
+  howpublished = {LIGO Laboratory, Caltech/MIT},
+  year         = {2023},
+  note         = {\url{https://www.ligo.caltech.edu/page/ligo-india}, accessed June 2025}
+}
+
+@misc{nasa_lisa,
+  author       = {{ESA} and {NASA LISA Mission Office}},
+  title        = {{LISA}: Laser Interferometer Space Antenna},
+  howpublished = {NASA/ESA},
+  year         = {2025},
+  note         = {\url{https://lisa.nasa.gov}, accessed June 2025}
+}
+
+% [CHECK] arXiv:1903.08924 appears to remain a conference proceedings /
+% preprint.  If you cite the LISA Pathfinder results paper instead,
+% consider Armano et al., Phys. Rev. Lett. 120, 061101 (2018).
+@misc{lpf_overview,
+  author        = {Armano, M. and others},
+  title         = {{LISA Pathfinder}: Mission Overview},
+  year          = {2019},
+  eprint        = {1903.08924},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.IM}
+}
+
+@misc{et_bluebook,
+  author        = {Abac, A. and others},
+  title         = {The Science of the {Einstein Telescope}},
+  year          = {2025},
+  eprint        = {2503.12263},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@misc{cosmic_explorer_horizon,
+  author        = {Evans, M. and others},
+  title         = {A Horizon Study for {Cosmic Explorer}: Science, Observatories, and Community},
+  year          = {2021},
+  eprint        = {2109.09882},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.IM}
+}
+
+@techreport{Shoemaker2009,
+  author      = {Shoemaker, D.},
+  title       = {Advanced {LIGO} anticipated sensitivity curves},
+  institution = {LIGO Scientific Collaboration},
+  number      = {LIGO-T0900288},
+  year        = {2009},
+  note        = {\url{https://dcc.ligo.org/LIGO-T0900288}}
+}
+
+
+% ---------------------------------------------------------------------
+%  Search pipelines
+% ---------------------------------------------------------------------
+
+% Published in SoftwareX: was arXiv-only in the previous version.
+@article{gstlal2020,
+  author  = {Cannon, K. and others},
+  title   = {{GstLAL}: A software framework for gravitational wave discovery},
+  journal = {SoftwareX},
+  volume  = {14},
+  pages   = {100680},
+  year    = {2021},
+  doi     = {10.1016/j.softx.2021.100680},
+  eprint        = {2010.05082},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.IM}
+}
+
+% [DUPLICATE] identical to "Messick_2017" below -- keep only one \cite key.
+@article{gstlal1,
+  author  = {Messick, C. and others},
+  title   = {Analysis framework for the prompt discovery of compact binary mergers in gravitational-wave data},
+  journal = {Phys. Rev. D},
+  volume  = {95},
+  number  = {4},
+  pages   = {042001},
+  year    = {2017},
+  doi     = {10.1103/PhysRevD.95.042001},
+  eprint        = {1604.04324},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.IM}
+}
+
+% [CHECK] still unpublished as of August 2026; arXiv entry is correct.
+@misc{gstlal2,
+  author        = {Sachdev, S. and others},
+  title         = {The {GstLAL} Search Analysis Methods for Compact Binary Mergers in {Advanced LIGO}'s Second and {Advanced Virgo}'s First Observing Runs},
+  year          = {2019},
+  eprint        = {1901.08580},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% Missing "journal" field added; author list typo ("Ewing, Becca others") fixed.
+@article{gstlal3,
+  author  = {Ewing, B. and others},
+  title   = {Performance of the low-latency {GstLAL} inspiral search towards {LIGO}, {Virgo}, and {KAGRA}'s fourth observing run},
+  journal = {Phys. Rev. D},
+  volume  = {109},
+  number  = {4},
+  pages   = {042008},
+  year    = {2024},
+  doi     = {10.1103/PhysRevD.109.042008},
+  eprint        = {2305.05625},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@article{gstlal4,
+  author  = {Tsukada, L. and others},
+  title   = {Improved ranking statistics of the {GstLAL} inspiral search for compact binary coalescences},
+  journal = {Phys. Rev. D},
+  volume  = {108},
+  number  = {4},
+  pages   = {043004},
+  year    = {2023},
+  doi     = {10.1103/PhysRevD.108.043004},
+  eprint        = {2305.06286},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.IM}
+}
+
+@article{pycbc2016,
+  author  = {Usman, S. A. and others},
+  title   = {The {PyCBC} search for gravitational waves from compact binary coalescence},
+  journal = {Class. Quantum Grav.},
+  volume  = {33},
+  number  = {21},
+  pages   = {215004},
+  year    = {2016},
+  doi     = {10.1088/0264-9381/33/21/215004},
+  eprint        = {1508.02357},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% Journal name expanded from "APJ"; DOI and eprint added.
+% [CHECK] please confirm with T. Dal Canton.
+@article{pycbc2021,
+  author  = {Dal Canton, T. and Nitz, A. H. and Gadre, B. and others},
+  title   = {Real-time search for compact binary mergers in {Advanced LIGO} and {Virgo}'s third observing run using {PyCBC Live}},
+  journal = {Astrophys. J.},
+  volume  = {923},
+  number  = {2},
+  pages   = {254},
+  year    = {2021},
+  doi     = {10.3847/1538-4357/ac2f9a},
+  eprint        = {2008.07494},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.HE}
+}
+
+@article{mbta_o4_2025,
+  author  = {All{\'e}n{\'e}, C. and others},
+  title   = {The {MBTA} pipeline for detecting compact binary coalescences in the fourth {LIGO--Virgo--KAGRA} observing run},
+  journal = {Class. Quantum Grav.},
+  volume  = {42},
+  number  = {10},
+  pages   = {105009},
+  year    = {2025},
+  doi     = {10.1088/1361-6382/add234},
+  eprint        = {2501.04598},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% Published in PRD: was arXiv-only in the previous version.
+@article{spiir2020,
+  author  = {Chu, Q. and Kovalam, M. and Wen, L. and others},
+  title   = {{SPIIR} online coherent pipeline to search for gravitational waves from compact binary coalescences},
+  journal = {Phys. Rev. D},
+  volume  = {105},
+  number  = {2},
+  pages   = {024023},
+  year    = {2022},
+  doi     = {10.1103/PhysRevD.105.024023},
+  eprint        = {2011.06787},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@article{spiir2,
+  author  = {Hooper, S. and others},
+  title   = {Summed parallel infinite impulse response filters for low-latency detection of chirping gravitational waves},
+  journal = {Phys. Rev. D},
+  volume  = {86},
+  number  = {2},
+  pages   = {024012},
+  year    = {2012},
+  doi     = {10.1103/PhysRevD.86.024012},
+  eprint        = {1108.3186},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@article{cwb1,
+  author  = {Klimenko, S. and Vedovato, G. and Drago, M. and Salemi, F. and Tiwari, V. and Prodi, G. A. and Lazzaro, C. and Ackley, K. and Tiwari, S. and Da Silva, C. F. and Mitselmakher, G.},
+  title   = {Method for detection and reconstruction of gravitational wave transients with networks of advanced detectors},
+  journal = {Phys. Rev. D},
+  volume  = {93},
+  number  = {4},
+  pages   = {042004},
+  year    = {2016},
+  doi     = {10.1103/PhysRevD.93.042004},
+  eprint        = {1511.05999},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@article{cwb2,
+  author  = {Klimenko, S. and Mohanty, S. and Rakhmanov, M. and Mitselmakher, G.},
+  title   = {Constraint likelihood analysis for a network of gravitational wave detectors},
+  journal = {Phys. Rev. D},
+  volume  = {72},
+  number  = {12},
+  pages   = {122002},
+  year    = {2005},
+  doi     = {10.1103/PhysRevD.72.122002},
+  eprint        = {gr-qc/0508068},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% [CHECK] published record: Phys. Rev. D 105, 083018 (2022).
+@article{cWB_ml2022,
+  author  = {Mishra, T. and O'Brien, B. and Szczepa{\'n}czyk, M. and others},
+  title   = {Search for binary black hole mergers in the third observing run of {Advanced LIGO--Virgo} using coherent {WaveBurst} enhanced with machine learning},
+  journal = {Phys. Rev. D},
+  volume  = {105},
+  number  = {8},
+  pages   = {083018},
+  year    = {2022},
+  doi     = {10.1103/PhysRevD.105.083018},
+  eprint        = {2201.01495},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@article{allen2012findchirp,
+  author  = {Allen, B. and Anderson, W. G. and Brady, P. R. and Brown, D. A. and Creighton, J. D. E.},
+  title   = {{FINDCHIRP}: An algorithm for detection of gravitational waves from inspiraling compact binaries},
+  journal = {Phys. Rev. D},
+  volume  = {85},
+  number  = {12},
+  pages   = {122006},
+  year    = {2012},
+  doi     = {10.1103/PhysRevD.85.122006},
+  eprint        = {gr-qc/0509116},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@article{BabakGlitchSearches,
+  author  = {Babak, S. and others},
+  title   = {Searching for gravitational waves from binary coalescence},
+  journal = {Phys. Rev. D},
+  volume  = {87},
+  number  = {2},
+  pages   = {024033},
+  year    = {2013},
+  doi     = {10.1103/PhysRevD.87.024033},
+  eprint        = {1208.3491},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% [DUPLICATE] identical to "gstlal1" above.
+@article{Messick_2017,
+  author  = {Messick, C. and Blackburn, K. and Brady, P. and others},
+  title   = {Analysis framework for the prompt discovery of compact binary mergers in gravitational-wave data},
+  journal = {Phys. Rev. D},
+  volume  = {95},
+  number  = {4},
+  pages   = {042001},
+  year    = {2017},
+  doi     = {10.1103/PhysRevD.95.042001},
+  eprint        = {1604.04324},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.IM}
+}
+
+@software{pycbc-software,
+  author  = {Nitz, A. and others},
+  title   = {{gwastro/pycbc}: v2.3.3 release of {PyCBC}},
+  version = {v2.3.3},
+  year    = {2024},
+  doi     = {10.5281/zenodo.10473621},
+  note    = {\url{https://doi.org/10.5281/zenodo.10473621}}
+}
+
+
+% ---------------------------------------------------------------------
+%  Signal-consistency tests and glitches
+% ---------------------------------------------------------------------
+
+@article{allen2005_chi2,
+  author  = {Allen, B.},
+  title   = {$\chi^2$ time-frequency discriminator for gravitational wave detection},
+  journal = {Phys. Rev. D},
+  volume  = {71},
+  number  = {6},
+  pages   = {062001},
+  year    = {2005},
+  doi     = {10.1103/PhysRevD.71.062001},
+  eprint        = {gr-qc/0405045},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% Title cleaned: the previous version contained raw MathML markup that
+% would have been typeset literally.
+@article{Dhurandhar_2017,
+  author  = {Dhurandhar, S. and Gupta, A. and Gadre, B. and Bose, S.},
+  title   = {A unified approach to $\chi^2$ discriminators for searches of gravitational waves from compact binary coalescences},
+  journal = {Phys. Rev. D},
+  volume  = {96},
+  number  = {10},
+  pages   = {103018},
+  year    = {2017},
+  doi     = {10.1103/PhysRevD.96.103018},
+  eprint        = {1708.03605},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@article{glitches_sine_gaussian_2014,
+  author  = {Dal Canton, T. and Bhagwat, S. and Dhurandhar, S. V. and Lundgren, A.},
+  title   = {Effect of sine-{Gaussian} glitches on searches for binary coalescence},
+  journal = {Class. Quantum Grav.},
+  volume  = {31},
+  number  = {1},
+  pages   = {015016},
+  year    = {2014},
+  doi     = {10.1088/0264-9381/31/1/015016},
+  eprint        = {1304.0008},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@article{PhysRevD.106.104045,
+  author  = {Relton, P. and Virtuoso, A. and Bini, S. and Raymond, V. and Harry, I. and Drago, M. and Lazzaro, C. and Miani, A. and Tiwari, S.},
+  title   = {Addressing the challenges of detecting time-overlapping compact binary coalescences},
+  journal = {Phys. Rev. D},
+  volume  = {106},
+  number  = {10},
+  pages   = {104045},
+  year    = {2022},
+  doi     = {10.1103/PhysRevD.106.104045},
+  eprint        = {2208.00261},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@phdthesis{Hanna2008Thesis,
+  author = {Hanna, C.},
+  title  = {Searching for gravitational waves from binary systems in non-stationary data},
+  school = {Louisiana State University},
+  year   = {2008}
+}
+
+
+% ---------------------------------------------------------------------
+%  Template banks
+% ---------------------------------------------------------------------
+
+@article{owen1996_templates,
+  author  = {Owen, B. J.},
+  title   = {Search templates for gravitational waves from inspiraling binaries: Choice of template spacing},
+  journal = {Phys. Rev. D},
+  volume  = {53},
+  number  = {12},
+  pages   = {6749--6761},
+  year    = {1996},
+  doi     = {10.1103/PhysRevD.53.6749},
+  eprint        = {gr-qc/9511032},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% Title corrected: the previous version gave a title that does not
+% correspond to Phys. Rev. D 99, 024048.
+@article{template_banks_2019,
+  author  = {Roy, S. and Sengupta, A. S. and Ajith, P.},
+  title   = {Effectual template banks for upcoming compact binary searches in {Advanced-LIGO} and {Virgo} data},
+  journal = {Phys. Rev. D},
+  volume  = {99},
+  number  = {2},
+  pages   = {024048},
+  year    = {2019},
+  doi     = {10.1103/PhysRevD.99.024048},
+  eprint        = {1711.08743},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% Published in ApJ: was arXiv-only in the previous version.
+@article{stochastic_bank_2024,
+  author  = {Kacanja, K. and Nitz, A. H. and Wu, S. and Cusinato, M. and Dhurkunde, R. and Harry, I. and Dal Canton, T. and Pannarale, F.},
+  title   = {Efficient stochastic template bank using inner product inequalities},
+  journal = {Astrophys. J.},
+  volume  = {975},
+  number  = {2},
+  pages   = {212},
+  year    = {2024},
+  doi     = {10.3847/1538-4357/ad7d87},
+  eprint        = {2407.03406},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.HE}
+}
+
+@article{harry2014,
+  author  = {Harry, I. W. and Nitz, A. H. and Brown, D. A. and Lundgren, A. P. and Ochsner, E. and Keppel, D.},
+  title   = {Investigating the effect of precession on searches for neutron-star--black-hole binaries with {Advanced LIGO}},
+  journal = {Phys. Rev. D},
+  volume  = {89},
+  number  = {2},
+  pages   = {024010},
+  year    = {2014},
+  doi     = {10.1103/PhysRevD.89.024010},
+  eprint        = {1307.3562},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@article{bnsspins2012,
+  author  = {Brown, D. A. and Harry, I. and Lundgren, A. and Nitz, A. H.},
+  title   = {Detecting binary neutron star systems with spin in advanced gravitational-wave detectors},
+  journal = {Phys. Rev. D},
+  volume  = {86},
+  number  = {8},
+  pages   = {084017},
+  year    = {2012},
+  doi     = {10.1103/PhysRevD.86.084017},
+  eprint        = {1207.6406},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+
+% ---------------------------------------------------------------------
+%  Waveform models
+% ---------------------------------------------------------------------
+
+@article{seobnrv4rom,
+  author  = {P{\"u}rrer, M.},
+  title   = {Frequency domain reduced order model of aligned-spin effective-one-body waveforms with generic mass ratios and spins},
+  journal = {Phys. Rev. D},
+  volume  = {93},
+  number  = {6},
+  pages   = {064041},
+  year    = {2016},
+  doi     = {10.1103/PhysRevD.93.064041},
+  eprint        = {1512.02248},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@article{seobnrv4,
+  author  = {Ossokine, S. and Buonanno, A. and Marsat, S. and Cotesta, R. and Babak, S. and Dietrich, T. and Haas, R. and Hinder, I. and Pfeiffer, H. P. and P{\"u}rrer, M. and Woodford, C. J. and Boyle, M. and Kidder, L. E. and Scheel, M. A. and Szil{\'a}gyi, B.},
+  title   = {Multipolar effective-one-body waveforms for precessing binary black holes: Construction and validation},
+  journal = {Phys. Rev. D},
+  volume  = {102},
+  number  = {4},
+  pages   = {044055},
+  year    = {2020},
+  doi     = {10.1103/PhysRevD.102.044055},
+  eprint        = {2004.09442},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@article{Pompili2023,
+  author  = {Pompili, L. and Buonanno, A. and Estell{\'e}s, H. and Khalil, M. and van de Meent, M. and Mihaylov, D. P. and Ossokine, S. and P{\"u}rrer, M. and Ramos-Buades, A. and Mehta, A. K. and Cotesta, R. and Marsat, S. and Boyle, M. and Kidder, L. E. and Pfeiffer, H. P. and Scheel, M. A. and R{\"u}ter, H. R. and Vu, N. and Dudi, R. and Ma, S. and Mitman, K. and Melchor, D. and Thomas, S. and Sanchez, J.},
+  title   = {Laying the foundation of the effective-one-body waveform models {SEOBNRv5}: Improved accuracy and efficiency for spinning nonprecessing binary black holes},
+  journal = {Phys. Rev. D},
+  volume  = {108},
+  number  = {12},
+  pages   = {124035},
+  year    = {2023},
+  doi     = {10.1103/PhysRevD.108.124035},
+  eprint        = {2303.18039},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% Published in PRD: was arXiv-only.  Note the published title drops the
+% "SEOBNRv5PHM:" prefix.
+% [DUPLICATE] same paper as "ramos_buades2023_seobnrv5phm" below.
+@article{ramosbuades2023,
+  author  = {Ramos-Buades, A. and Buonanno, A. and Estell{\'e}s, H. and Khalil, M. and Mihaylov, D. P. and Ossokine, S. and Pompili, L. and Shiferaw, M.},
+  title   = {Next generation of accurate and efficient multipolar precessing-spin effective-one-body waveforms for binary black holes},
+  journal = {Phys. Rev. D},
+  volume  = {108},
+  number  = {12},
+  pages   = {124037},
+  year    = {2023},
+  doi     = {10.1103/PhysRevD.108.124037},
+  eprint        = {2303.18046},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% [DUPLICATE] same paper as "ramosbuades2023" above -- keep only one.
+@article{ramos_buades2023_seobnrv5phm,
+  author  = {Ramos-Buades, A. and Buonanno, A. and Estell{\'e}s, H. and Khalil, M. and Mihaylov, D. P. and Ossokine, S. and Pompili, L. and Shiferaw, M.},
+  title   = {Next generation of accurate and efficient multipolar precessing-spin effective-one-body waveforms for binary black holes},
+  journal = {Phys. Rev. D},
+  volume  = {108},
+  number  = {12},
+  pages   = {124037},
+  year    = {2023},
+  doi     = {10.1103/PhysRevD.108.124037},
+  eprint        = {2303.18046},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% Volume/pages completed (PRD 112, 044038); stray closing brace removed.
+@article{Gamboa_2025,
+  author  = {Gamboa, A. and Buonanno, A. and Enficiaud, R. and Khalil, M. and Ramos-Buades, A. and Pompili, L. and Estell{\'e}s, H. and Boyle, M. and Kidder, L. E. and Pfeiffer, H. P. and R{\"u}ter, H. R. and Scheel, M. A.},
+  title   = {Accurate waveforms for eccentric, aligned-spin binary black holes: The multipolar effective-one-body model {SEOBNRv5EHM}},
+  journal = {Phys. Rev. D},
+  volume  = {112},
+  number  = {4},
+  pages   = {044038},
+  year    = {2025},
+  doi     = {10.1103/jxrc-z298},
+  eprint        = {2412.12823},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@article{varma2014high,
+  author  = {Varma, V. and Ajith, P.},
+  title   = {Effects of nonquadrupole modes in the detection and parameter estimation of black hole binaries with nonprecessing spins},
+  journal = {Phys. Rev. D},
+  volume  = {96},
+  number  = {12},
+  pages   = {124024},
+  year    = {2017},
+  doi     = {10.1103/PhysRevD.96.124024},
+  eprint        = {1612.05608},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@article{PhysRev.131.435,
+  author  = {Peters, P. C. and Mathews, J.},
+  title   = {Gravitational Radiation from Point Masses in a {Keplerian} Orbit},
+  journal = {Phys. Rev.},
+  volume  = {131},
+  number  = {1},
+  pages   = {435--440},
+  year    = {1963},
+  doi     = {10.1103/PhysRev.131.435}
+}
+
+@article{PhysRev.136.B1224,
+  author  = {Peters, P. C.},
+  title   = {Gravitational Radiation and the Motion of Two Point Masses},
+  journal = {Phys. Rev.},
+  volume  = {136},
+  number  = {4B},
+  pages   = {B1224--B1232},
+  year    = {1964},
+  doi     = {10.1103/PhysRev.136.B1224}
+}
+
+
+% ---------------------------------------------------------------------
+%  Machine learning applied to gravitational waves
+% ---------------------------------------------------------------------
+
+% Published in PRD: was arXiv-only.  Note the published title.
+@article{mlgwsc1_mock,
+  author  = {Sch{\"a}fer, M. B. and Zelenka, O. and Nitz, A. H. and Wang, H. and Wu, S. and Guo, Z.-K. and Cao, Z. and Ren, Z. and Nousi, P. and Stergioulas, N. and Iosif, P. and Koloniari, A. E. and Tefas, A. and Passalis, N. and Salemi, F. and Vedovato, G. and Klimenko, S. and Mishra, T. and Br{\"u}gmann, B. and Cuoco, E. and Huerta, E. A. and Messenger, C. and Ohme, F.},
+  title   = {First machine learning gravitational-wave search mock data challenge},
+  journal = {Phys. Rev. D},
+  volume  = {107},
+  number  = {2},
+  pages   = {023021},
+  year    = {2023},
+  doi     = {10.1103/PhysRevD.107.023021},
+  eprint        = {2209.11146},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.IM}
+}
+
+% Published in PRD: was arXiv-only in the previous version.
+@article{deepresnet2022,
+  author  = {Nousi, P. and Koloniari, A. E. and Passalis, N. and Iosif, P. and Stergioulas, N. and Tefas, A.},
+  title   = {Deep residual networks for gravitational wave detection},
+  journal = {Phys. Rev. D},
+  volume  = {108},
+  number  = {2},
+  pages   = {024022},
+  year    = {2023},
+  doi     = {10.1103/PhysRevD.108.024022},
+  eprint        = {2211.01520},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% Published in PRD: was arXiv-only.  Note the published title differs
+% from the preprint ("Toward real-time...", "unmodeled" not "unmodelled").
+@article{cnn_unmodelled2024,
+  author  = {Skliris, V. and Norman, M. R. K. and Sutton, P. J.},
+  title   = {Toward real-time detection of unmodeled gravitational wave transients using convolutional neural networks},
+  journal = {Phys. Rev. D},
+  volume  = {110},
+  number  = {10},
+  pages   = {104034},
+  year    = {2024},
+  doi     = {10.1103/PhysRevD.110.104034},
+  eprint        = {2009.14611},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.IM}
+}
+
+% Published in PRD: was arXiv-only in the previous version.
+@article{ml_pipeline2024,
+  author  = {Marx, E. and Benoit, W. and Gunny, A. and Omer, R. and Chatterjee, D. and Venterea, R. C. and Wills, L. and Saleem, M. and Moreno, E. and Raikman, R. and Govorkova, E. and Desai, M. and Krupa, J. and Rankin, D. and Coughlin, M. W. and Harris, P. and Katsavounidis, E.},
+  title   = {Machine-learning pipeline for real-time detection of gravitational waves from compact binary coalescences},
+  journal = {Phys. Rev. D},
+  volume  = {111},
+  number  = {4},
+  pages   = {042010},
+  year    = {2025},
+  doi     = {10.1103/PhysRevD.111.042010},
+  eprint        = {2403.18661},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@article{bns_dl_pipeline2024,
+  author  = {McLeod, A. and Beveridge, D. and Wen, L. and Wicenec, A.},
+  title   = {Binary neutron star merger search pipeline powered by deep learning},
+  journal = {Phys. Rev. D},
+  volume  = {111},
+  number  = {2},
+  pages   = {024035},
+  year    = {2025},
+  doi     = {10.1103/PhysRevD.111.024035},
+  eprint        = {2409.06266},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% Published in PRD (referee's "10.1103/5x62-9ldh"): was arXiv-only.
+% Key renamed -- the old key "arXiv:2512.12399" contained a colon, which
+% is legal in BibTeX but fragile; update your \cite commands to
+% \cite{yamamoto2026hybrid}.
+@article{yamamoto2026hybrid,
+  author  = {Yamamoto, T. S. and Cannon, K. and Motohashi, H. and Tahara, H. W. H.},
+  title   = {Hybrid algorithm combining matched filtering and convolutional neural networks for searching gravitational waves from binary black hole mergers},
+  journal = {Phys. Rev. D},
+  volume  = {113},
+  number  = {6},
+  pages   = {062004},
+  year    = {2026},
+  doi     = {10.1103/5x62-9ldh},
+  eprint        = {2512.12399},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+% Alias kept so that existing \cite{arXiv:2512.12399} still resolves.
+% Remove once the \cite commands have been updated.
+@article{arXiv:2512.12399,
+  author  = {Yamamoto, T. S. and Cannon, K. and Motohashi, H. and Tahara, H. W. H.},
+  title   = {Hybrid algorithm combining matched filtering and convolutional neural networks for searching gravitational waves from binary black hole mergers},
+  journal = {Phys. Rev. D},
+  volume  = {113},
+  number  = {6},
+  pages   = {062004},
+  year    = {2026},
+  doi     = {10.1103/5x62-9ldh},
+  eprint        = {2512.12399},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+
+% ---------------------------------------------------------------------
+%  Machine learning -- general
+% ---------------------------------------------------------------------
+
+@article{rosenblatt1958,
+  author  = {Rosenblatt, F.},
+  title   = {The perceptron: A probabilistic model for information storage and organization in the brain},
+  journal = {Psychol. Rev.},
+  volume  = {65},
+  number  = {6},
+  pages   = {386--408},
+  year    = {1958},
+  doi     = {10.1037/h0042519}
+}
+
+@article{rumelhart1986_backprop,
+  author  = {Rumelhart, D. E. and Hinton, G. E. and Williams, R. J.},
+  title   = {Learning representations by back-propagating errors},
+  journal = {Nature},
+  volume  = {323},
+  number  = {6088},
+  pages   = {533--536},
+  year    = {1986},
+  doi     = {10.1038/323533a0}
+}
+
+@article{LeCun2015,
+  author  = {LeCun, Y. and Bengio, Y. and Hinton, G.},
+  title   = {Deep learning},
+  journal = {Nature},
+  volume  = {521},
+  number  = {7553},
+  pages   = {436--444},
+  year    = {2015},
+  doi     = {10.1038/nature14539}
+}
+
+% Published at CVPR 2016: was arXiv-only in the previous version.
+@inproceedings{he2015resnet,
+  author    = {He, K. and Zhang, X. and Ren, S. and Sun, J.},
+  title     = {Deep Residual Learning for Image Recognition},
+  booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {770--778},
+  year      = {2016},
+  doi       = {10.1109/CVPR.2016.90},
+  eprint        = {1512.03385},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV}
+}
+
+@inproceedings{krizhevsky2012imagenet,
+  author    = {Krizhevsky, A. and Sutskever, I. and Hinton, G. E.},
+  title     = {{ImageNet} Classification with Deep Convolutional Neural Networks},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {25},
+  pages     = {1097--1105},
+  publisher = {Curran Associates, Inc.},
+  year      = {2012}
+}
+
+@inproceedings{bn,
+  author    = {Ioffe, S. and Szegedy, C.},
+  title     = {Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift},
+  booktitle = {Proceedings of the 32nd International Conference on Machine Learning},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {37},
+  pages     = {448--456},
+  publisher = {PMLR},
+  address   = {Lille, France},
+  year      = {2015},
+  eprint        = {1502.03167},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+@inproceedings{lin2014network,
+  author    = {Lin, M. and Chen, Q. and Yan, S.},
+  title     = {Network in Network},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2014},
+  eprint        = {1312.4400},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.NE}
+}
+
+% Changed from @article{...CoRR...} to the ICLR proceedings.
+@inproceedings{Adam,
+  author    = {Kingma, D. P. and Ba, J.},
+  title     = {{Adam}: A Method for Stochastic Optimization},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2015},
+  eprint        = {1412.6980},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+@article{oshea2015_cnn_intro,
+  author  = {O'Shea, K. and Nash, R.},
+  title   = {An Introduction to Convolutional Neural Networks},
+  year    = {2015},
+  eprint        = {1511.08458},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.NE}
+}
+
+
+% ---------------------------------------------------------------------
+%  Astrophysics of compact-object populations
+% ---------------------------------------------------------------------
+
+% Stray closing brace removed (was a BibTeX syntax error).
+@article{Farr_2017,
+  author  = {Farr, W. M. and Stevenson, S. and Miller, M. C. and Mandel, I. and Farr, B. and Vecchio, A.},
+  title   = {Distinguishing spin-aligned and isotropic black hole populations with gravitational waves},
+  journal = {Nature},
+  volume  = {548},
+  number  = {7668},
+  pages   = {426--429},
+  year    = {2017},
+  doi     = {10.1038/nature23453},
+  eprint        = {1706.01385},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.HE}
+}
+
+% Stray closing brace removed (was a BibTeX syntax error).
+@article{Farr_2018,
+  author  = {Farr, B. and Holz, D. E. and Farr, W. M.},
+  title   = {Using Spin to Understand the Formation of {LIGO} and {Virgo}'s Black Holes},
+  journal = {Astrophys. J. Lett.},
+  volume  = {854},
+  number  = {1},
+  pages   = {L9},
+  year    = {2018},
+  doi     = {10.3847/2041-8213/aaaa64},
+  eprint        = {1709.07896},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.HE}
+}
+
+% Stray closing brace removed; article number added.
+@article{Johnson_McDaniel_2022,
+  author  = {Johnson-McDaniel, N. K. and Kulkarni, S. and Gupta, A.},
+  title   = {Inferring spin tilts at formation from gravitational wave observations of binary black holes: Interfacing precession-averaged and orbit-averaged spin evolution},
+  journal = {Phys. Rev. D},
+  volume  = {106},
+  number  = {2},
+  pages   = {023001},
+  year    = {2022},
+  doi     = {10.1103/PhysRevD.106.023001},
+  eprint        = {2107.11902},
+  archivePrefix = {arXiv},
+  primaryClass  = {gr-qc}
+}
+
+@article{roulet2019binary,
+  author  = {Roulet, J. and Zaldarriaga, M.},
+  title   = {Constraints on binary black hole populations from {LIGO--Virgo} detections},
+  journal = {Mon. Not. R. Astron. Soc.},
+  volume  = {484},
+  number  = {3},
+  pages   = {4216--4229},
+  year    = {2019},
+  doi     = {10.1093/mnras/stz359},
+  eprint        = {1806.10610},
+  archivePrefix = {arXiv},
+  primaryClass  = {astro-ph.HE}
+}
+
+@incollection{Mapelli_2021,
+  author    = {Mapelli, M.},
+  title     = {Formation Channels of Single and Binary Stellar-Mass Black Holes},
+  booktitle = {Handbook of Gravitational Wave Astronomy},
+  publisher = {Springer Singapore},
+  pages     = {1--65},
+  year      = {2021},
+  doi       = {10.1007/978-981-15-4702-7_16-1},
+  isbn      = {9789811547027}
+}
+
+@article{3yph-35r4,
+  title = {Searching for binary black hole mergers with deep learning in Advanced LIGO's third observing run},
+  author = {Beveridge, Damon and McLeod, Alistair and Wen, Linqing and Guo, Weichangfeng and Wicenec, Andreas},
+  journal = {Phys. Rev. D},
+  volume = {114},
+  issue = {2},
+  pages = {024058},
+  numpages = {22},
+  year = {2026},
+  month = {Jul},
+  publisher = {American Physical Society},
+  doi = {10.1103/3yph-35r4},
+  url = {https://link.aps.org/doi/10.1103/3yph-35r4}
+}
+
+
+% ---------------------------------------------------------------------
+%  Books
+% ---------------------------------------------------------------------
+
+@book{matched_filtering,
+  author    = {Helstrom, C. W.},
+  title     = {Statistical Theory of Signal Detection},
+  edition   = {2},
+  publisher = {Pergamon Press},
+  address   = {London},
+  year      = {1968}
+}

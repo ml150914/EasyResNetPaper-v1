@@ -45,6 +45,23 @@ plt.rcParams.update({
     "text.usetex": True,
     "font.family": "serif",
     "font.serif": ["Times New Roman"],
+    "font.size": 15,
+    "axes.titlesize": 17,
+    "axes.titleweight": "bold",
+    "axes.titlepad": 10,
+    "axes.labelsize": 15,
+    "xtick.labelsize": 13,
+    "ytick.labelsize": 13,
+    "axes.spines.top": False,
+    "axes.spines.right": False,
+    "axes.axisbelow": True,
+    "legend.frameon": True,
+    "legend.framealpha": 0.9,
+    "legend.edgecolor": "0.8",
+    "legend.fontsize": 13,
+    "figure.autolayout": False,
+    "savefig.dpi": 300,
+    "savefig.bbox": "tight",
 })
 
 FIGURES_DIR = "/Users/lorenzomobilia/Desktop/Lavoro/PhDUrbino/IJC_lab/ResNet-Article/easyresnetpaper/Figures"

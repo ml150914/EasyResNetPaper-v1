@@ -32,7 +32,7 @@
 \def\skipy{4.9}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  main branch
+%  main branch:  Conv2D -> BN -> ReLU -> Conv2D -> BN -> (+)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pic[shift={ (0,0,0) }] at (0,0,0) { 
     Box={
@@ -99,19 +99,7 @@
 };
 \draw [connection]  (conv2-east)    -- node {\midarrow} (bn2-west);
 
-\pic[shift={ (2,0,0) }] at (bn2-east) { 
-    Box={
-        name=conv3,
-        caption=Conv2D,
-        fill=\ConvColor,
-        height=32,
-        width=2,
-        depth=32
-        }
-    };
-\draw [connection]  (bn2-east)    -- node {\midarrow} (conv3-west);
-
-\pic[shift={(1.4,0,0)}] at (conv3-east) 
+\pic[shift={(2.4,0,0)}] at (bn2-east) 
     {Ball={
         name=sum1,
         fill=\SumColor,
@@ -120,7 +108,7 @@
         logo=$+$
         }
     };
-\draw [connection]  (conv3-east)    -- node {\midarrow} (sum1-west);
+\draw [connection]  (bn2-east)    -- node {\midarrow} (sum1-west);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  block input, block output
